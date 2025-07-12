@@ -29,6 +29,8 @@
   --hyprland-yellow: rgba(255, 215, 0, 0.25);
   --hyprland-active: rgba(255, 102, 0, 0.25);
   --hyprland-inactive: rgba(26, 26, 26, 0.38);
+  --waybar-active-bg: rgba(255, 102, 0, 0.15);
+  --waybar-active-border: rgba(255, 102, 0, 0.6);
   --neon-blue-dim: #0099cc;
   --neon-cyan-dim: #00cccc;
   --neon-green-dim: #00cc00;
@@ -64,10 +66,10 @@ toolbar {
 .tabbrowser-tab[selected="true"],
 .tabbrowser-tab[selected="true"] .tab-content,
 .tabbrowser-tab[selected="true"] .tab-background {
-  background-color: var(--hyprland-active) !important;
-  background: var(--hyprland-active) !important;
+  background-color: var(--waybar-active-bg) !important;
+  background: var(--waybar-active-bg) !important;
   color: #ff6600 !important;
-  border: 1px solid var(--hyprland-active) !important;
+  border: 1px solid var(--waybar-active-border) !important;
   box-shadow: none !important;
 }
 
