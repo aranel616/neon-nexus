@@ -1,0 +1,1 @@
+/home/sarah/.config/neon-nexus.zsh-theme

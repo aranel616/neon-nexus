@@ -1,0 +1,37 @@
+# Neon Nexus .gitignore
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Log files
+*.log
+
+# Screenshots (until ready for release)
+screenshots/*.png
+screenshots/*.jpg
+screenshots/*.gif
+!screenshots/README.md
+
+# Personal configurations that shouldn't be shared
+configs/*/personal/
+*.personal
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Cache files
+.cache/
