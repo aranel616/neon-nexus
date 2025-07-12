@@ -106,7 +106,7 @@ cp -r configs/wofi ~/.config/
 
 # Install zsh theme
 cp configs/zsh/zshrc ~/.zshrc
-cp configs/zsh/neon-nexus.zsh-theme ~/.oh-my-zsh/themes/
+cp configs/zsh/neon-nexus-dim.zsh-theme ~/.oh-my-zsh/themes/
 
 # Reload services
 hyprctl reload
