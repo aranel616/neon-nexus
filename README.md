@@ -232,4 +232,6 @@ Inspired by cyberpunk aesthetics, neon-lit cityscapes, and the desire for a cohe
 
 ---
 
+✨ *Vibe coded by [Claude Code](https://claude.ai/code)* ✨
+
 *Created with ❤️ for the Linux community*
