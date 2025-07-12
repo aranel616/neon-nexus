@@ -1,0 +1,357 @@
+/*
+ * ███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███╗   ███╗
+ * ████╗  ██║██╔════╝██╔═══██╗████╗  ██║    ████╗  ██║██╔════╝╚██╗██╔╝██║   ██║████╗ ████║
+ * ██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║    ██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║██╔████╔██║
+ * ██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║    ██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║██║╚██╔╝██║
+ * ██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝██║ ╚═╝ ██║
+ * ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+ *
+ * Firefox userChrome.css - "Neon Nexus Dim" Cyberpunk Theme
+ * Matches Waybar, Mako, Wofi, Hyprland, Zsh, and Kitty theming
+ *
+ * IMPORTANT: This file requires Firefox's legacy customization feature.
+ * 1. Type about:config in Firefox address bar
+ * 2. Search for: toolkit.legacyUserProfileCustomizations.stylesheets
+ * 3. Set it to: true
+ * 4. Restart Firefox
+ */
+
+/* Import custom properties for theme colors */
+:root {
+  /* Neon Nexus Dim Color Palette */
+  --neon-bg-primary: #1a1a1a;
+  --neon-bg-secondary: #000000;
+  --neon-text-primary: #e0e0e0;
+  --neon-text-secondary: #b0b0b0;
+  --neon-orange-dim: #cc5200;
+  --neon-yellow-dim: #ccac00;
+  --hyprland-orange: rgba(255, 102, 0, 0.25);
+  --hyprland-yellow: rgba(255, 215, 0, 0.25);
+  --hyprland-active: rgba(255, 102, 0, 0.25);
+  --hyprland-inactive: rgba(26, 26, 26, 0.38);
+  --neon-blue-dim: #0099cc;
+  --neon-cyan-dim: #00cccc;
+  --neon-green-dim: #00cc00;
+  --neon-pink-dim: #cc1174;
+  
+  /* Transparency variants */
+  --neon-orange-alpha: rgba(204, 82, 0, 0.3);
+  --neon-blue-alpha: rgba(0, 153, 204, 0.3);
+  --neon-bg-alpha: rgba(26, 26, 26, 0.9);
+}
+
+/* Main browser window background */
+#main-window,
+#navigator-toolbox,
+#TabsToolbar,
+#nav-bar,
+toolbar {
+  background-color: var(--neon-bg-secondary) !important;
+  color: var(--neon-text-primary) !important;
+}
+
+/* Tab bar styling */
+.tabbrowser-tab {
+  background-color: var(--hyprland-inactive) !important;
+  color: var(--neon-text-secondary) !important;
+  border: 1px solid var(--hyprland-inactive) !important;
+  border-radius: 6px 6px 0 0 !important;
+  margin: 2px 1px 0 1px !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Active tab */
+.tabbrowser-tab[selected="true"],
+.tabbrowser-tab[selected="true"] .tab-content,
+.tabbrowser-tab[selected="true"] .tab-background {
+  background-color: var(--hyprland-active) !important;
+  background: var(--hyprland-active) !important;
+  color: #ff6600 !important;
+  border: 1px solid var(--hyprland-active) !important;
+  box-shadow: none !important;
+}
+
+/* Tab hover effect */
+.tabbrowser-tab:hover:not([selected="true"]) {
+  background-color: rgba(204, 82, 0, 0.1) !important;
+  color: var(--hyprland-orange) !important;
+  border: 1px solid rgba(204, 82, 0, 0.3) !important;
+}
+
+/* Tab close button */
+.tab-close-button {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--neon-text-secondary) !important;
+  border-radius: 3px !important;
+}
+
+.tab-close-button:hover {
+  background-color: var(--neon-pink-dim) !important;
+  color: #ffffff !important;
+}
+
+/* Address bar (URL bar) */
+#urlbar,
+#urlbar-background,
+#urlbar-input-container {
+  background-color: var(--neon-bg-secondary) !important;
+  color: var(--neon-text-primary) !important;
+  border: 1px solid var(--hyprland-orange) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+#urlbar:focus-within {
+  border-color: var(--hyprland-orange) !important;
+  box-shadow: none !important;
+}
+
+#urlbar-input {
+  color: var(--neon-text-primary) !important;
+  font-family: 'Fira Code', monospace !important;
+}
+
+/* Search bar */
+#searchbar,
+.searchbar-textbox {
+  background-color: var(--neon-bg-secondary) !important;
+  color: var(--neon-text-primary) !important;
+  border: 2px solid var(--neon-blue-dim) !important;
+  border-radius: 8px !important;
+}
+
+/* Toolbar buttons */
+.toolbarbutton-1,
+.toolbarbutton-1 > .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-text {
+  background-color: transparent !important;
+  color: var(--neon-text-primary) !important;
+  border: 1px solid transparent !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.toolbarbutton-1:hover {
+  background-color: var(--neon-orange-alpha) !important;
+  border: 1px solid var(--hyprland-orange) !important;
+  color: var(--hyprland-orange) !important;
+  box-shadow: 0 0 8px rgba(204, 82, 0, 0.3) !important;
+}
+
+/* Menu button */
+#PanelUI-menu-button,
+#PanelUI-button {
+  background-color: var(--neon-blue-alpha) !important;
+  border: 1px solid var(--neon-blue-dim) !important;
+  border-radius: 6px !important;
+}
+
+#PanelUI-menu-button:hover,
+#PanelUI-button:hover {
+  background-color: rgba(0, 153, 204, 0.5) !important;
+  box-shadow: 0 0 10px rgba(0, 153, 204, 0.4) !important;
+}
+
+/* Bookmarks toolbar */
+#PersonalToolbar {
+  background-color: var(--neon-bg-secondary) !important;
+  border-bottom: none !important;
+}
+
+/* Make tab bar bottom border black */
+#TabsToolbar::after,
+.tabbrowser-arrowscrollbox::after,
+.tab-stack::after {
+  border-bottom: 1px solid var(--neon-bg-secondary) !important;
+  background-color: var(--neon-bg-secondary) !important;
+}
+
+.bookmark-item {
+  background-color: transparent !important;
+  color: var(--neon-text-primary) !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  margin: 1px !important;
+}
+
+.bookmark-item:hover {
+  background-color: var(--neon-orange-dim) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--neon-orange-dim) !important;
+}
+
+/* Navigation buttons (back, forward, refresh) */
+#back-button,
+#forward-button,
+#reload-button,
+#stop-button {
+  background-color: transparent !important;
+  border: 1px solid var(--neon-cyan-dim) !important;
+  border-radius: 6px !important;
+  color: var(--neon-cyan-dim) !important;
+  margin: 2px !important;
+}
+
+#back-button:hover,
+#forward-button:hover,
+#reload-button:hover,
+#stop-button:hover {
+  background-color: rgba(0, 204, 204, 0.2) !important;
+  box-shadow: 0 0 8px rgba(0, 204, 204, 0.4) !important;
+}
+
+/* Sidebar */
+#sidebar-box,
+#sidebar-header,
+#sidebar,
+#sidebar-splitter,
+#sidebar-box #sidebar,
+.sidebar-panel,
+#bookmarksPanel,
+#history-panel,
+#sidebar-search-container,
+#bookmarks-view-children,
+#historyTree,
+#bookmarks-view treechildren,
+#bookmarks-view,
+#bookmarksPanel treechildren,
+.sidebar-placesTreechildren,
+.sidebar-placesTreechildren::-moz-tree-cell {
+  background-color: var(--neon-bg-secondary) !important;
+  background: var(--neon-bg-secondary) !important;
+  color: var(--neon-text-primary) !important;
+  border-right: 1px solid var(--hyprland-orange) !important;
+  -moz-appearance: none !important;
+  border-color: transparent !important;
+}
+
+/* Context menus and panels */
+menupopup,
+panel {
+  background-color: var(--neon-bg-primary) !important;
+  color: var(--neon-text-primary) !important;
+  border: 1px solid var(--hyprland-orange) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 15px rgba(26, 26, 26, 0.8) !important;
+}
+
+menuitem:hover,
+.panel-arrowcontent > * :hover {
+  background-color: var(--neon-orange-alpha) !important;
+  color: var(--hyprland-orange) !important;
+}
+
+/* Dropdown arrows and separators */
+menuseparator {
+  border-color: var(--hyprland-orange) !important;
+}
+
+/* Status bar and notifications */
+.notificationbox-stack {
+  background-color: var(--neon-bg-primary) !important;
+  color: var(--neon-text-primary) !important;
+}
+
+/* Scrollbars */
+scrollbar {
+  background-color: var(--neon-bg-primary) !important;
+}
+
+scrollbar thumb {
+  background-color: var(--hyprland-orange) !important;
+  border-radius: 6px !important;
+}
+
+scrollbar thumb:hover {
+  background-color: var(--hyprland-orange) !important;
+  box-shadow: 0 0 5px rgba(204, 82, 0, 0.5) !important;
+}
+
+/* Downloads panel */
+#downloadsPanel {
+  background-color: var(--neon-bg-primary) !important;
+  border: 2px solid var(--neon-blue-dim) !important;
+  border-radius: 8px !important;
+}
+
+/* Find bar */
+.findbar-container {
+  background-color: var(--neon-bg-primary) !important;
+  border: 1px solid var(--neon-yellow-dim) !important;
+  color: var(--neon-text-primary) !important;
+}
+
+.findbar-textbox {
+  background-color: var(--neon-bg-secondary) !important;
+  color: var(--neon-text-primary) !important;
+  border: 1px solid var(--neon-yellow-dim) !important;
+  border-radius: 4px !important;
+}
+
+/* Tab loading indicator */
+.tab-throbber {
+  color: var(--hyprland-orange) !important;
+}
+
+/* Splitter for sidebar resizing */
+splitter {
+  background-color: var(--hyprland-orange) !important;
+  border: none !important;
+  min-width: 2px !important;
+}
+
+/* Developer tools button */
+#developer-button:hover {
+  background-color: var(--neon-pink-dim) !important;
+  color: #ffffff !important;
+}
+
+/* New tab page theming */
+@-moz-document url(about:home), url(about:newtab) {
+  :root {
+    --newtab-background-color: var(--neon-bg-secondary) !important;
+    --newtab-text-primary-color: var(--neon-text-primary) !important;
+    --newtab-border-color: var(--hyprland-active) !important;
+    --newtab-search-background-color: var(--neon-bg-primary) !important;
+    --newtab-search-border-color: var(--hyprland-active) !important;
+  }
+  
+  body {
+    background-color: var(--neon-bg-secondary) !important;
+    color: var(--neon-text-primary) !important;
+  }
+  
+  .search-wrapper {
+    background-color: var(--neon-bg-primary) !important;
+    border: 1px solid var(--hyprland-active) !important;
+    border-radius: 8px !important;
+  }
+  
+  .search-handoff-button {
+    background-color: var(--neon-bg-primary) !important;
+    color: var(--neon-text-primary) !important;
+    border: 1px solid var(--hyprland-active) !important;
+    border-radius: 8px !important;
+  }
+  
+  .top-site-outer {
+    background-color: var(--neon-bg-primary) !important;
+    border: 1px solid var(--hyprland-inactive) !important;
+    border-radius: 6px !important;
+  }
+  
+  .top-site-outer:hover {
+    border-color: var(--hyprland-active) !important;
+    background-color: var(--hyprland-inactive) !important;
+  }
+  
+  .top-site-inner .tile {
+    background-color: var(--neon-bg-primary) !important;
+  }
+  
+  .top-site-inner .title {
+    color: var(--neon-text-primary) !important;
+  }
+}
