@@ -1,0 +1,404 @@
+/*
+ * ███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███╗   ███╗
+ * ████╗  ██║██╔════╝██╔═══██╗████╗  ██║    ████╗  ██║██╔════╝╚██╗██╔╝██║   ██║████╗ ████║
+ * ██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║    ██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║██╔████╔██║
+ * ██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║    ██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║██║╚██╔╝██║
+ * ██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝██║ ╚═╝ ██║
+ * ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+ * 
+ * Cyberpunk Waybar Theme - "Neon Nexus Dim"
+ * Designed for futuristic aesthetics with neon red/orange/yellow colors
+ */
+
+* {
+    /* Modern monospace font for cyberpunk feel */
+    font-family: 'Fira Code', 'Source Code Pro', 'JetBrains Mono', 'Roboto Mono', FontAwesome, monospace;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* Main window styling - Transparent for floating effect */
+window#waybar {
+    background: transparent;
+    color: #ffffff;
+}
+
+window#waybar.hidden {
+    opacity: 0.3;
+}
+
+/* Keep window variants transparent too */
+window#waybar.kitty,
+window#waybar.firefox {
+    background: transparent;
+}
+
+/* Button styling */
+button {
+    box-shadow: inset 0 -2px transparent;
+    border: none;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: #ffffff;
+}
+
+button:hover {
+    background: rgba(255, 102, 0, 0.2);
+    box-shadow: 
+        inset 0 -2px #ff6600,
+        0 0 15px rgba(255, 102, 0, 0.4);
+    color: #ff6600;
+}
+
+/* Workspaces - Floating individual buttons */
+#workspaces {
+    margin: 0 8px;
+    background: transparent;
+    padding: 2px;
+}
+
+#workspaces button {
+    padding: 6px 12px;
+    margin: 2px;
+    background: rgba(26, 26, 26, 0.9);
+    color: #ff6600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 102, 0, 0.3);
+}
+
+#workspaces button:hover {
+    background: rgba(255, 102, 0, 0.2);
+    color: #ff6600;
+    border: 1px solid rgba(255, 102, 0, 0.6);
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.4);
+}
+
+#workspaces button.active {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    font-weight: bold;
+    border: 1px solid rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+#workspaces button.urgent {
+    background: rgba(255, 20, 147, 0.9);
+    color: #ffffff;
+    border: 1px solid #ff1493;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.9);
+}
+
+/* Submap (mode) */
+#submap {
+    background: rgba(255, 102, 0, 0.9);
+    color: #000000;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid #ffaa00;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+    margin: 0 4px;
+}
+
+/* Window title - Minimized floating style */
+#window {
+    margin: 0 8px;
+    padding: 6px 12px;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    border-radius: 6px;
+    color: #ffd700;
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* Common module styling - Individual floating modules */
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#power-profiles-daemon,
+#mpd,
+#custom-media,
+#custom-power {
+    padding: 6px 12px;
+    margin: 0 3px;
+    color: #ffffff;
+    background: rgba(26, 26, 26, 0.9);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Clock - Neon Yellow */
+#clock {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+#clock:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* Battery */
+#battery {
+    background: rgba(0, 255, 0, 0.15);
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    color: #00ff00;
+}
+
+#battery.charging, #battery.plugged {
+    background: rgba(255, 215, 0, 0.25);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+#battery.warning {
+    background: rgba(255, 165, 0, 0.25);
+    color: #ffa500;
+    border: 1px solid rgba(255, 165, 0, 0.6);
+}
+
+#battery.critical:not(.charging) {
+    background: rgba(255, 20, 147, 0.3);
+    color: #ffffff;
+    border: 1px solid #ff1493;
+    box-shadow: 0 0 25px rgba(255, 20, 147, 0.8);
+}
+
+/* CPU - Neon Orange */
+#cpu {
+    background: rgba(255, 102, 0, 0.15);
+    color: #ff6600;
+    border: 1px solid rgba(255, 102, 0, 0.5);
+}
+
+#cpu:hover {
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+}
+
+/* Memory - Electric Pink */
+#memory {
+    background: rgba(255, 20, 147, 0.15);
+    color: #ff1493;
+    border: 1px solid rgba(255, 20, 147, 0.5);
+}
+
+/* Temperature */
+#temperature {
+    background: rgba(255, 165, 0, 0.15);
+    color: #ffa500;
+    border: 1px solid rgba(255, 165, 0, 0.5);
+}
+
+#temperature.critical {
+    background: rgba(255, 20, 147, 0.3);
+    color: #ffffff;
+    border: 1px solid #ff1493;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+}
+
+/* Network */
+#network {
+    background: rgba(0, 191, 255, 0.15);
+    color: #00bfff;
+    border: 1px solid rgba(0, 191, 255, 0.5);
+}
+
+#network.disconnected {
+    background: rgba(255, 20, 147, 0.3);
+    color: #ffffff;
+    border: 1px solid #ff1493;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.7);
+}
+
+/* Audio */
+#pulseaudio {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+}
+
+#pulseaudio.muted {
+    background: rgba(128, 128, 128, 0.25);
+    color: #808080;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+#pulseaudio:hover {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Power profiles */
+#power-profiles-daemon.performance {
+    background: rgba(255, 20, 147, 0.3);
+    color: #ffffff;
+    border: 1px solid #ff1493;
+}
+
+#power-profiles-daemon.balanced {
+    background: rgba(255, 165, 0, 0.25);
+    color: #ffa500;
+    border: 1px solid rgba(255, 165, 0, 0.6);
+}
+
+#power-profiles-daemon.power-saver {
+    background: rgba(0, 255, 0, 0.15);
+    color: #00ff00;
+    border: 1px solid rgba(0, 255, 0, 0.5);
+}
+
+/* System tray */
+#tray {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 0, 64, 0.3);
+    border-radius: 6px;
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background: rgba(255, 0, 64, 0.3);
+    border-radius: 4px;
+}
+
+/* Media player */
+#custom-media {
+    background: rgba(102, 204, 153, 0.15);
+    color: #66cc99;
+    border: 1px solid rgba(102, 204, 153, 0.5);
+}
+
+#custom-media.custom-spotify {
+    color: #1db954;
+    background: rgba(29, 185, 84, 0.15);
+    border: 1px solid rgba(29, 185, 84, 0.5);
+}
+
+/* MPD */
+#mpd {
+    background: rgba(102, 204, 153, 0.15);
+    color: #66cc99;
+    border: 1px solid rgba(102, 204, 153, 0.5);
+}
+
+#mpd.disconnected {
+    background: rgba(255, 20, 147, 0.2);
+    color: #ff1493;
+    border: 1px solid rgba(255, 20, 147, 0.5);
+}
+
+#mpd.stopped {
+    background: rgba(128, 128, 128, 0.2);
+    color: #808080;
+}
+
+#mpd.paused {
+    background: rgba(255, 165, 0, 0.15);
+    color: #ffa500;
+    border: 1px solid rgba(255, 165, 0, 0.5);
+}
+
+/* Idle inhibitor */
+#idle_inhibitor {
+    background: rgba(45, 52, 54, 0.3);
+    color: #636e72;
+}
+
+#idle_inhibitor.activated {
+    background: rgba(255, 215, 0, 0.25);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.6);
+}
+
+/* Keyboard state */
+#keyboard-state {
+    background: rgba(151, 225, 173, 0.1);
+    color: #97e1ad;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 6px;
+}
+
+#keyboard-state > label {
+    padding: 0 8px;
+    transition: all 0.2s ease;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(255, 20, 147, 0.25);
+    color: #ff1493;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 20, 147, 0.5);
+}
+
+/* Backlight */
+#backlight {
+    background: rgba(144, 177, 177, 0.15);
+    color: #90b1b1;
+    border: 1px solid rgba(144, 177, 177, 0.5);
+}
+
+/* Custom power button - Redesigned */
+#custom-power {
+    background: rgba(0, 34, 68, 0.9);
+    color: #00ffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    margin: 0 8px;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+#custom-power:hover {
+    background: rgba(0, 255, 255, 0.2);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Margins and spacing adjustments */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 8px;
+}
+
+.modules-right > widget:last-child > #custom-power {
+    margin-right: 8px;
+}
+
+/* Hover effects for all modules */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-media:hover,
+#mpd:hover {
+    opacity: 0.9;
+}
+
