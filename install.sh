@@ -141,19 +141,56 @@ install_font() {
 install_configs() {
     print_step "Installing Neon Nexus configurations..."
     
-    # Ensure config directory exists
-    mkdir -p "$HOME/.config"
+    # Ensure config directories exist
+    mkdir -p "$HOME/.config/hypr" "$HOME/.config/waybar" "$HOME/.config/mako" "$HOME/.config/wofi" "$HOME/.config/kitty"
     
-    # Install each configuration
-    for config in hypr waybar mako; do
-        if [[ -d "configs/$config" ]]; then
-            print_status "Installing $config configuration..."
-            cp -r "configs/$config" "$HOME/.config/"
+    # Define config files to install
+    declare -A config_files=(
+        ["hypr/hyprland.conf"]="$HOME/.config/hypr/hyprland.conf"
+        ["waybar/config.jsonc"]="$HOME/.config/waybar/config.jsonc" 
+        ["waybar/config-emoji.jsonc"]="$HOME/.config/waybar/config-emoji.jsonc"
+        ["waybar/style.css"]="$HOME/.config/waybar/style.css"
+        ["mako/config"]="$HOME/.config/mako/config"
+        ["wofi/config"]="$HOME/.config/wofi/config"
+        ["wofi/style.css"]="$HOME/.config/wofi/style.css"
+        ["kitty/kitty.conf"]="$HOME/.config/kitty/kitty.conf"
+    )
+    
+    # Install each config file
+    for src_file in "${!config_files[@]}"; do
+        target_file="${config_files[$src_file]}"
+        
+        if [[ -f "configs/$src_file" ]]; then
+            # Check if target already exists
+            if [[ -e "$target_file" ]]; then
+                print_warning "$(basename "$target_file") already exists, skipping..."
+                continue
+            fi
+            
+            print_status "Installing $(basename "$src_file")..."
+            cp "configs/$src_file" "$target_file"
         else
-            print_error "Configuration directory configs/$config not found!"
-            exit 1
+            print_warning "Config file configs/$src_file not found, skipping..."
         fi
     done
+    
+    # Install zsh theme
+    if [[ -f "configs/zsh/neon-nexus-dim.zsh-theme" ]]; then
+        print_status "Installing zsh theme..."
+        mkdir -p "$HOME/.oh-my-zsh/custom/themes"
+        cp "configs/zsh/neon-nexus-dim.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
+        
+        if [[ -f "configs/zsh/zshrc" ]]; then
+            print_status "Installing zsh configuration..."
+            cp "configs/zsh/zshrc" "$HOME/.zshrc"
+        fi
+    fi
+    
+    # Install Firefox theme
+    if [[ -d "configs/firefox" ]]; then
+        print_status "Installing Firefox theme..."
+        echo "Note: Firefox theme requires manual setup. See configs/firefox/README.md"
+    fi
     
     print_status "Configurations installed successfully!"
 }

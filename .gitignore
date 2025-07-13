@@ -35,3 +35,17 @@ Thumbs.db
 
 # Cache files
 .cache/
+*.cache
+
+# Config artifacts that shouldn't be tracked
+configs/**/sessions/
+configs/**/logs/
+configs/**/*.pid
+configs/**/*.lock
+configs/**/cache/
+configs/**/crashes/
+
+# Application specific ignores
+configs/hypr/example/
+configs/*/session.*
+configs/*/state.*

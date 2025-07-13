@@ -1,0 +1,204 @@
+/*
+ * ███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███╗   ███╗
+ * ████╗  ██║██╔════╝██╔═══██╗████╗  ██║    ████╗  ██║██╔════╝╚██╗██╔╝██║   ██║████╗ ████║
+ * ██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║    ██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║██╔████╔██║
+ * ██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║    ██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║██║╚██╔╝██║
+ * ██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝██║ ╚═╝ ██║
+ * ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+ *
+ * Wofi Cyberpunk Theme - "Neon Nexus Dim"
+ * Matches Waybar, Mako, and Hyprland theming
+ */
+
+* {
+    /* Cyberpunk font matching other components */
+    font-family: 'Fira Code', 'Source Code Pro', 'JetBrains Mono', 'Roboto Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Main window - floating cyberpunk design */
+window {
+    margin: 0px;
+    border: 2px solid rgba(255, 102, 0, 0.6);
+    background-color: rgba(26, 26, 26, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 102, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+/* Input field styling */
+#input {
+    margin: 8px 12px;
+    padding: 12px 16px;
+    color: #ffffff;
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 2px solid rgba(255, 102, 0, 0.4);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#input:focus {
+    border: 2px solid rgba(255, 102, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+    outline: none;
+}
+
+#input image {
+    color: #ff6600;
+    margin-right: 8px;
+}
+
+/* Outer box containing all entries */
+#outer-box {
+    margin: 8px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Inner box with scroll */
+#inner-box {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Scroll area */
+#scroll {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Individual entries */
+#entry {
+    padding: 12px 16px;
+    margin: 2px 8px;
+    background-color: rgba(26, 26, 26, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+#entry:selected {
+    background-color: rgba(255, 102, 0, 0.2);
+    border: 1px solid rgba(255, 102, 0, 0.6);
+    color: #ff6600;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+}
+
+#entry:hover {
+    background-color: rgba(255, 102, 0, 0.15);
+    border: 1px solid rgba(255, 102, 0, 0.4);
+    color: #ff6600;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.25);
+}
+
+/* Entry text styling */
+#entry #text {
+    color: inherit;
+    font-weight: 500;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+#entry:selected #text {
+    color: #ff6600;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(255, 102, 0, 0.3);
+}
+
+/* Application icons */
+#entry #img {
+    margin-right: 12px;
+    padding: 2px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+#entry:selected #img {
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+}
+
+/* No results message */
+#text:not(#entry) {
+    color: #888888;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Scrollbar styling */
+scrollbar {
+    background-color: rgba(26, 26, 26, 0.3);
+    border-radius: 6px;
+    border: none;
+    margin: 0px 4px;
+    width: 8px;
+}
+
+scrollbar slider {
+    background-color: rgba(255, 102, 0, 0.5);
+    border-radius: 6px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+scrollbar slider:hover {
+    background-color: rgba(255, 102, 0, 0.7);
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.4);
+}
+
+/* Special styling for specific app categories */
+#entry[app-id*="firefox"] {
+    border-left: 3px solid rgba(0, 191, 255, 0.6);
+}
+
+#entry[app-id*="discord"] {
+    border-left: 3px solid rgba(255, 20, 147, 0.6);
+}
+
+#entry[app-id*="spotify"] {
+    border-left: 3px solid rgba(102, 204, 153, 0.6);
+}
+
+#entry[app-id*="kitty"] {
+    border-left: 3px solid rgba(255, 215, 0, 0.6);
+}
+
+#entry[app-id*="code"] {
+    border-left: 3px solid rgba(0, 122, 204, 0.6);
+}
+
+/* Animation for window appearance */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+window {
+    animation: slide-in 0.2s ease-out;
+}
+
+/* Cyberpunk glow effect for selected items */
+@keyframes neon-pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 102, 0, 0.6);
+    }
+}
+
+#entry:selected {
+    animation: neon-pulse 2s infinite ease-in-out;
+}

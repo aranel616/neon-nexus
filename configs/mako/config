@@ -1,0 +1,100 @@
+# Mako Configuration - "Neon Nexus Dim" Cyberpunk Theme
+# Matches the floating cyberpunk Waybar theme
+
+# Appearance
+background-color=#1a1a1aE6
+text-color=#ffffff
+border-color=#ff6600
+border-size=2
+border-radius=8
+
+# Typography
+font=Fira Code 12
+text-alignment=left
+
+# Layout
+width=350
+height=120
+margin=10,10,5,10
+padding=15
+anchor=top-right
+max-visible=5
+
+# Positioning
+layer=overlay
+
+# Behavior
+default-timeout=8000
+ignore-timeout=0
+max-history=50
+sort=-time
+
+# Icons
+icons=1
+max-icon-size=48
+icon-location=left
+
+# Progress bars
+progress-color=over #ff6600
+
+# Close behavior
+on-button-left=dismiss
+on-button-middle=none
+on-button-right=dismiss-all
+on-touch=dismiss
+
+# Urgency-specific styling
+[urgency=low]
+background-color=#1a1a1aCC
+border-color=#66cc99
+default-timeout=5000
+
+[urgency=normal]
+background-color=#1a1a1aE6
+border-color=#ff6600
+default-timeout=8000
+
+[urgency=critical]
+background-color=#1a1a1aF0
+border-color=#ff1493
+text-color=#ffffff
+default-timeout=0
+
+# Category-specific theming (exact Waybar colors)
+[category=music]
+border-color=#66cc99
+background-color=#1a1a1aE6
+
+[category=volume]
+border-color=#ffd700
+background-color=#1a1a1aE6
+
+[category=network]
+border-color=#00bfff
+background-color=#1a1a1aE6
+
+[category=battery]
+border-color=#00ff00
+background-color=#1a1a1aE6
+
+[category=battery urgency=critical]
+border-color=#ff1493
+background-color=#1a1a1aF0
+text-color=#ffffff
+
+# App-specific theming (consistent backgrounds)
+[app-name="Discord"]
+border-color=#7289da
+background-color=#1a1a1aE6
+
+[app-name="Firefox"]
+border-color=#ff6600
+background-color=#1a1a1aE6
+
+[app-name="Steam"]
+border-color=#00adee
+background-color=#1a1a1aE6
+
+[app-name="Spotify"]
+border-color=#66cc99
+background-color=#1a1a1aE6
