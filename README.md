@@ -48,6 +48,7 @@ The **Dim** variant uses carefully selected muted colors that maintain the cyber
 - **[Zsh](configs/zsh/)** - Shell with custom "neon-nexus-dim" Oh My Zsh theme
 - **[Kitty](configs/kitty/)** - Terminal emulator with complete dim color palette
 - **[Firefox](configs/firefox/)** - Browser UI theme with userChrome.css customization
+- **[Dolphin](configs/dolphin/)** - File manager theming via qt5ct/qt6ct with dark cyberpunk styling
 
 ### 🎯 Features
 - **Window Borders**: App-specific colored borders matching component functions
@@ -66,7 +67,8 @@ neon-nexus-dim/
 │   ├── wofi/         # Application launcher config and theme
 │   ├── zsh/          # Zsh shell and custom theme
 │   ├── kitty/        # Terminal emulator theme
-│   └── firefox/      # Browser UI customization
+│   ├── firefox/      # Browser UI customization
+│   └── dolphin/      # File manager Qt theming
 ├── scripts/          # Installation and utility scripts
 ├── screenshots/      # Theme preview images
 ├── docs/            # Additional documentation
@@ -191,7 +193,7 @@ animation = workspaces, 1, 4, cyberpunk, slide
 
 ## 📊 Project Stats
 
-- **Total Components**: 7 fully themed applications
+- **Total Components**: 8 fully themed applications
 - **Color Variants**: Bright and Dim versions available
 - **Installation Time**: ~5 minutes with automated script
 - **Compatibility**: Arch Linux, Manjaro, EndeavourOS (and other Arch-based distros)
