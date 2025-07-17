@@ -28,20 +28,7 @@ Text White: #e0e0e0 (primary text, dimmed)
 
 ## Installation and Deployment
 
-### Primary Installation Method
-```bash
-./install.sh
-```
-
-The main installation script (`install.sh`) handles:
-- Dependency checking (Hyprland, Waybar, Mako)
-- Configuration backup with timestamps
-- Font installation (Fira Code)
-- File copying to appropriate config directories
-- Permission setting
-- Service reloading
-
-### Manual Installation Commands
+### Installation Commands
 ```bash
 # Backup existing configs
 mkdir -p ~/.config/backup
@@ -150,7 +137,6 @@ neon-nexus-dim/
 │   └── dolphin/      # File manager (Qt theming)
 ├── docs/             # Documentation
 ├── screenshots/      # Theme previews
-├── install.sh        # Main installation script
 └── README.md         # Primary documentation
 ```
 

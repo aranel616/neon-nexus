@@ -72,8 +72,7 @@ neon-nexus-dim/
 ├── scripts/          # Installation and utility scripts
 ├── screenshots/      # Theme preview images
 ├── docs/            # Additional documentation
-├── README.md        # This file
-└── install.sh       # Automated installation script
+└── README.md        # This file
 ```
 
 ## ⚡ Quick Installation
@@ -90,8 +89,6 @@ neon-nexus-dim/
 ```bash
 git clone https://github.com/yourusername/neon-nexus-dim.git
 cd neon-nexus-dim
-chmod +x install.sh
-./install.sh
 ```
 
 ### Manual Installation
