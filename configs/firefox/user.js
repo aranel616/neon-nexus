@@ -1,12 +1,12 @@
 /*
- * Firefox user.js - "Neon Nexus Dim" Configuration
+ * Firefox user.js - "Neon Nexus" Configuration
  * Required settings to enable userChrome.css theming
  */
 
 // Enable legacy userChrome.css support
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
-// Dark theme preferences that work well with Neon Nexus Dim
+// Dark theme preferences that work well with Neon Nexus
 user_pref("ui.systemUsesDarkTheme", 1);
 user_pref("browser.theme.dark-private-windows", true);
 

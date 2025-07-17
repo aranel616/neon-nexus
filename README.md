@@ -1,4 +1,4 @@
-# Neon Nexus Dim - Cyberpunk Linux Desktop Theme
+# Neon Nexus - Cyberpunk Linux Desktop Theme
 
 ```
 ███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███████╗
@@ -11,11 +11,11 @@
 
 A comprehensive cyberpunk-themed Linux desktop environment featuring **dim neon aesthetics**, floating modules, and futuristic animations. This theme provides a cohesive visual experience across all desktop components with subdued colors that are easy on the eyes while maintaining the cyberpunk aesthetic.
 
-**Neon Nexus Dim** is designed for users who want the cyberpunk look without the eye strain of overly bright neon colors. All components use carefully selected dimmed variants of classic cyberpunk colors.
+**Neon Nexus** is designed for users who want the cyberpunk look without the eye strain of overly bright neon colors. All components use carefully selected dimmed variants of classic cyberpunk colors.
 
 ## 🎨 Theme Overview
 
-**Neon Nexus Dim** brings a sophisticated cyberpunk aesthetic to your Linux desktop with:
+**Neon Nexus** brings a sophisticated cyberpunk aesthetic to your Linux desktop with:
 
 - **Dark Foundation**: Primary background `#1a1a1a` with strategic transparency
 - **Dim Neon Accents**: Subtle colored highlights that don't overwhelm
@@ -59,7 +59,7 @@ The **Dim** variant uses carefully selected muted colors that maintain the cyber
 ## 📁 Repository Structure
 
 ```
-neon-nexus-dim/
+neon-nexus/
 ├── configs/           # Symlinked configuration directories
 │   ├── hypr/         # Hyprland window manager config
 │   ├── waybar/       # Status bar configuration and CSS
@@ -87,8 +87,8 @@ neon-nexus-dim/
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/neon-nexus-dim.git
-cd neon-nexus-dim
+git clone https://github.com/yourusername/neon-nexus.git
+cd neon-nexus
 ```
 
 ### Manual Installation
@@ -197,7 +197,7 @@ animation = workspaces, 1, 4, cyberpunk, slide
 
 ## 🎯 Philosophy
 
-**Neon Nexus Dim** follows the principle that a great theme should:
+**Neon Nexus** follows the principle that a great theme should:
 - **Enhance productivity** without causing eye strain
 - **Maintain consistency** across all applications
 - **Provide flexibility** for user customization
@@ -205,7 +205,7 @@ animation = workspaces, 1, 4, cyberpunk, slide
 
 ## 🔄 Version History
 
-- **v1.0** - Initial release with Dim color palette
+- **v1.0** - Initial release with dim color palette
 - Complete theme coverage for desktop environment
 - Automated installation and customization scripts
 

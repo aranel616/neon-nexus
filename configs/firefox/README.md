@@ -1,4 +1,4 @@
-# Firefox Neon Nexus Dim Theme
+# Firefox Neon Nexus Theme
 
 ## Installation
 
@@ -33,9 +33,9 @@ The main install script will handle Firefox theming automatically.
 
 ## Features
 
-- **Dark UI**: Black backgrounds matching Neon Nexus Dim palette
+- **Dark UI**: Black backgrounds matching Neon Nexus palette
 - **Active tabs**: Orange accent matching Hyprland active border color
-- **Inactive tabs**: Dark gray matching Hyprland inactive border color
+- **Inactive tabs**: Dark gray matching Hyprland inactive border color  
 - **Themed address bar**: Dark background with orange border, no glow effects
 - **Custom buttons**: Hover effects with cyberpunk colors
 - **Themed menus**: Consistent dark styling with orange highlights

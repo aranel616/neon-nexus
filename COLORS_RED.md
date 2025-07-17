@@ -91,7 +91,7 @@ When implementing, these CSS custom properties can be used:
 ```
 
 ### Configuration Differences from Dim Theme
-Key color replacements when converting from Neon Nexus Dim:
+Key color replacements when converting from Neon Nexus:
 - `#ff6600` (orange) → `#ff4a57` (terminal red)
 - `#ffd700` (yellow) → `#ed1e79` (deep magenta)
 - `#00ff00` (green) → `#880425` (blood red)

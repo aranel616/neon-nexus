@@ -1,8 +1,8 @@
-# Dolphin File Manager Neon Nexus Dim Theme
+# Dolphin File Manager Neon Nexus Theme
 
 ## Overview
 
-This configuration provides Neon Nexus Dim theming for Dolphin file manager and other Qt applications using qt5ct and qt6ct.
+This configuration provides Neon Nexus theming for Dolphin file manager and other Qt applications using qt5ct and qt6ct.
 
 ## Installation
 
@@ -38,7 +38,7 @@ The main install script will handle Dolphin theming automatically.
 
 ## Features
 
-- **Dark UI**: Black and dark gray backgrounds matching Neon Nexus Dim palette
+- **Dark UI**: Black and dark gray backgrounds matching Neon Nexus palette
 - **Orange accents**: Dim orange highlights for selections and active elements
 - **Consistent fonts**: Fira Code font family throughout
 - **Breeze Dark icons**: Dark icon theme for better visibility

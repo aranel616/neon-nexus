@@ -6,7 +6,7 @@
  * ██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║
  * ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
  *
- * Firefox userChrome.css - "Neon Nexus Dim" Cyberpunk Theme
+ * Firefox userChrome.css - "Neon Nexus" Cyberpunk Theme
  * Matches Waybar, Mako, Wofi, Hyprland, Zsh, and Kitty theming
  *
  * IMPORTANT: This file requires Firefox's legacy customization feature.
@@ -18,7 +18,7 @@
 
 /* Import custom properties for theme colors */
 :root {
-  /* Neon Nexus Dim Color Palette */
+  /* Neon Nexus Color Palette */
   --neon-bg-primary: #1a1a1a;
   --neon-bg-secondary: #000000;
   --neon-text-primary: #e0e0e0;

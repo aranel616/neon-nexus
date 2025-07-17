@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is **Neon Nexus Dim**, a comprehensive cyberpunk-themed Linux desktop environment repository. It's a configuration package containing themed dotfiles for various Linux desktop applications, designed to provide a cohesive cyberpunk aesthetic with dim neon colors that are easier on the eyes than traditional bright neon themes.
+This is **Neon Nexus**, a comprehensive cyberpunk-themed Linux desktop environment repository. It's a configuration package containing themed dotfiles for various Linux desktop applications, designed to provide a cohesive cyberpunk aesthetic with dim neon colors that are easier on the eyes than traditional bright neon themes.
 
 ## Project Architecture
 
@@ -125,7 +125,7 @@ hyprctl reload
 
 ### File Structure
 ```
-neon-nexus-dim/
+neon-nexus/
 ├── configs/           # Main configuration files (symlinked)
 │   ├── hypr/         # Hyprland window manager
 │   ├── waybar/       # Status bar (config + CSS)
