@@ -47,8 +47,10 @@ The **Dim** variant uses carefully selected muted colors that maintain the cyber
 - **[Wofi](configs/wofi/)** - Application launcher with floating design and subtle glow
 - **[Zsh](configs/zsh/)** - Shell with custom "neon-nexus-dim" Oh My Zsh theme
 - **[Kitty](configs/kitty/)** - Terminal emulator with complete dim color palette
-- **[Firefox](configs/firefox/)** - Browser UI theme with userChrome.css customization
-- **[Dolphin](configs/dolphin/)** - File manager theming via qt5ct/qt6ct with dark cyberpunk styling
+
+### 🚧 Work in Progress
+- **[Firefox](configs/firefox/)** - Browser UI theme (partial userChrome.css implementation)
+- **[Dolphin](configs/dolphin/)** - File manager theming (Qt theming in development)
 
 ### 🎯 Features
 - **Window Borders**: App-specific colored borders matching component functions
@@ -161,11 +163,13 @@ animation = workspaces, 1, 4, cyberpunk, slide
 ## 🚀 Future Roadmap
 
 ### Planned Components
-- **Kitty** - Terminal with matching color scheme
-- **Wofi/Rofi** - Application launcher theming
 - **GTK/Qt** - System-wide application theming
 - **Plymouth** - Boot splash screen
 - **SDDM** - Login manager theme
+
+### In Development
+- **Firefox** - Complete userChrome.css theming with all UI elements
+- **Dolphin** - Full Qt file manager theming integration
 
 ### Enhancement Ideas
 - Dynamic wallpaper integration
@@ -190,7 +194,8 @@ animation = workspaces, 1, 4, cyberpunk, slide
 
 ## 📊 Project Stats
 
-- **Total Components**: 8 fully themed applications
+- **Fully Themed Components**: 6 applications
+- **In Development**: 2 applications (Firefox, Dolphin)
 - **Color Variants**: Bright and Dim versions available
 - **Installation Time**: ~5 minutes with automated script
 - **Compatibility**: Arch Linux, Manjaro, EndeavourOS (and other Arch-based distros)
