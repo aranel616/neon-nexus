@@ -47,6 +47,7 @@ The **Dim** variant uses carefully selected muted colors that maintain the cyber
 - **[Wofi](configs/wofi/)** - Application launcher with floating design and subtle glow
 - **[Zsh](configs/zsh/)** - Shell with custom "neon-nexus-dim" Oh My Zsh theme
 - **[Kitty](configs/kitty/)** - Terminal emulator with complete dim color palette
+- **[GTK](configs/gtk/)** - System theme for GTK applications (Thunar, file dialogs, etc.)
 
 ### 🚧 Work in Progress
 - **[Firefox](configs/firefox/)** - Browser UI theme (partial userChrome.css implementation)
@@ -69,6 +70,7 @@ neon-nexus/
 │   ├── wofi/         # Application launcher config and theme
 │   ├── zsh/          # Zsh shell and custom theme
 │   ├── kitty/        # Terminal emulator theme
+│   ├── gtk/          # GTK system theme for file managers and dialogs
 │   ├── firefox/      # Browser UI customization
 │   └── dolphin/      # File manager Qt theming
 ├── scripts/          # Installation and utility scripts
@@ -105,14 +107,24 @@ cp -r configs/waybar ~/.config/
 cp -r configs/mako ~/.config/
 cp -r configs/wofi ~/.config/
 
+# Install GTK theme
+cp -r configs/gtk/themes/NeonNexus ~/.themes/
+mkdir -p ~/.config/gtk-3.0
+cp configs/gtk/config/gtk-3.0-settings.ini ~/.config/gtk-3.0/settings.ini
+cp configs/gtk/config/gtk-2.0-gtkrc ~/.gtkrc-2.0
+
 # Install zsh theme
 cp configs/zsh/zshrc ~/.zshrc
-cp configs/zsh/neon-nexus-dim.zsh-theme ~/.oh-my-zsh/themes/
+cp configs/zsh/neon-nexus.zsh-theme ~/.oh-my-zsh/themes/
 
 # Reload services
 hyprctl reload
 pkill waybar && waybar &
 pkill mako && mako &
+
+# Apply GTK theme
+gsettings set org.gnome.desktop.interface gtk-theme 'NeonNexus'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 ```
 
 ## 🎮 Application-Specific Theming
@@ -194,7 +206,7 @@ animation = workspaces, 1, 4, cyberpunk, slide
 
 ## 📊 Project Stats
 
-- **Fully Themed Components**: 6 applications
+- **Fully Themed Components**: 7 applications
 - **In Development**: 2 applications (Firefox, Dolphin)
 - **Color Variants**: Bright and Dim versions available
 - **Installation Time**: ~5 minutes with automated script

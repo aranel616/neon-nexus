@@ -1,0 +1,404 @@
+/*
+ * ███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███████╗
+ * ████╗  ██║██╔════╝██╔═══██╗████╗  ██║    ████╗  ██║██╔════╝╚██╗██╔╝██║   ██║██╔════╝
+ * ██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║    ██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║███████╗
+ * ██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║    ██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║╚════██║
+ * ██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║
+ * ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+ * 
+ * Neon Nexus GTK3 Theme - Cyberpunk Dark Theme for File Managers and GTK Applications
+ * Matches the Waybar, Mako, and terminal theming with dim neon accents
+ */
+
+/* ===== COLOR DEFINITIONS ===== */
+@define-color neon_orange #ff6600;
+@define-color neon_yellow #ffd700;
+@define-color neon_green #00ff00;
+@define-color neon_pink #ff1493;
+@define-color neon_cyan #00bfff;
+@define-color neon_blue #0099ff;
+@define-color music_green #66cc99;
+
+/* Dark foundation colors */
+@define-color dark_base #1a1a1a;
+@define-color dark_surface #2a2a2a;
+@define-color dark_elevated #3a3a3a;
+@define-color dark_border #404040;
+@define-color dark_text #e0e0e0;
+@define-color dark_text_secondary #b0b0b0;
+@define-color dark_text_disabled #707070;
+
+/* Accent colors with transparency */
+@define-color accent_bg rgba(255, 102, 0, 0.15);
+@define-color accent_border rgba(255, 102, 0, 0.5);
+@define-color hover_bg rgba(255, 102, 0, 0.25);
+@define-color selected_bg rgba(255, 215, 0, 0.2);
+@define-color selected_border rgba(255, 215, 0, 0.6);
+
+/* ===== GLOBAL STYLES ===== */
+* {
+    outline: none;
+    -gtk-outline-radius: 0;
+}
+
+/* Window backgrounds */
+window {
+    background-color: @dark_base;
+    color: @dark_text;
+    font-family: "Fira Code", "Source Code Pro", monospace;
+    font-size: 12px;
+}
+
+/* ===== THUNAR SPECIFIC ===== */
+.thunar-window {
+    background-color: @dark_base;
+}
+
+.thunar-window toolbar {
+    background-color: @dark_surface;
+    border-bottom: 1px solid @dark_border;
+    padding: 8px;
+}
+
+.thunar-window .sidebar {
+    background-color: @dark_surface;
+    border-right: 1px solid @dark_border;
+}
+
+.thunar-window .view {
+    background-color: @dark_base;
+    color: @dark_text;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 6px;
+    color: @dark_text;
+    padding: 8px 12px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: @hover_bg;
+    border-color: @accent_border;
+    color: @neon_orange;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.3);
+}
+
+button:active {
+    background-color: @accent_bg;
+    border-color: @neon_orange;
+}
+
+button:disabled {
+    background-color: @dark_base;
+    border-color: @dark_border;
+    color: @dark_text_disabled;
+    opacity: 0.5;
+}
+
+/* ===== ENTRY FIELDS ===== */
+entry {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 6px;
+    color: @dark_text;
+    padding: 8px 12px;
+    transition: all 0.2s ease;
+}
+
+entry:focus {
+    background-color: @dark_elevated;
+    border-color: @neon_orange;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+}
+
+entry:disabled {
+    background-color: @dark_base;
+    color: @dark_text_disabled;
+    opacity: 0.5;
+}
+
+/* ===== TREEVIEW (File Lists) ===== */
+treeview {
+    background-color: @dark_base;
+    color: @dark_text;
+    border: none;
+}
+
+treeview:selected {
+    background-color: @selected_bg;
+    color: @neon_yellow;
+}
+
+treeview:hover {
+    background-color: rgba(255, 102, 0, 0.1);
+}
+
+treeview header button {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 0;
+    color: @dark_text_secondary;
+    font-weight: bold;
+}
+
+treeview header button:hover {
+    background-color: @hover_bg;
+    color: @neon_orange;
+}
+
+/* ===== SCROLLBARS ===== */
+scrollbar {
+    background-color: @dark_base;
+    border: none;
+}
+
+scrollbar slider {
+    background-color: @dark_border;
+    border-radius: 6px;
+    min-width: 12px;
+    min-height: 12px;
+    transition: all 0.2s ease;
+}
+
+scrollbar slider:hover {
+    background-color: @neon_orange;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+}
+
+scrollbar slider:active {
+    background-color: @neon_yellow;
+}
+
+/* ===== SIDEBAR ===== */
+sidebar {
+    background-color: @dark_surface;
+    border-right: 1px solid @dark_border;
+}
+
+sidebar row {
+    color: @dark_text;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 2px 4px;
+}
+
+sidebar row:hover {
+    background-color: @hover_bg;
+    color: @neon_orange;
+}
+
+sidebar row:selected {
+    background-color: @selected_bg;
+    color: @neon_yellow;
+    border: 1px solid @selected_border;
+}
+
+/* ===== TOOLBAR ===== */
+toolbar {
+    background-color: @dark_surface;
+    border-bottom: 1px solid @dark_border;
+    padding: 4px;
+}
+
+toolbar button {
+    border-radius: 4px;
+    margin: 2px;
+    padding: 6px 10px;
+}
+
+toolbar separator {
+    background-color: @dark_border;
+    margin: 4px 8px;
+}
+
+/* ===== MENUS ===== */
+menu {
+    background-color: @dark_elevated;
+    border: 1px solid @accent_border;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 4px;
+}
+
+menuitem {
+    color: @dark_text;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+menuitem:hover {
+    background-color: @hover_bg;
+    color: @neon_orange;
+}
+
+menuitem:disabled {
+    color: @dark_text_disabled;
+    opacity: 0.5;
+}
+
+/* ===== POPOVER ===== */
+popover {
+    background-color: @dark_elevated;
+    border: 1px solid @accent_border;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+popover.background {
+    background-color: @dark_elevated;
+}
+
+/* ===== STATUSBAR ===== */
+statusbar {
+    background-color: @dark_surface;
+    border-top: 1px solid @dark_border;
+    color: @dark_text_secondary;
+    padding: 4px 12px;
+}
+
+/* ===== PATHBAR ===== */
+.path-bar button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: @dark_text_secondary;
+    padding: 4px 8px;
+    margin: 0 2px;
+}
+
+.path-bar button:hover {
+    background-color: @hover_bg;
+    border-color: @accent_border;
+    color: @neon_orange;
+}
+
+.path-bar button:active,
+.path-bar button:checked {
+    background-color: @selected_bg;
+    border-color: @selected_border;
+    color: @neon_yellow;
+}
+
+/* ===== NOTEBOOK TABS ===== */
+notebook {
+    background-color: @dark_base;
+}
+
+notebook header {
+    background-color: @dark_surface;
+    border-bottom: 1px solid @dark_border;
+}
+
+notebook tab {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px 6px 0 0;
+    color: @dark_text_secondary;
+    padding: 8px 16px;
+    margin: 0 2px;
+}
+
+notebook tab:hover {
+    background-color: @hover_bg;
+    color: @neon_orange;
+}
+
+notebook tab:checked {
+    background-color: @selected_bg;
+    border: 1px solid @selected_border;
+    border-bottom: none;
+    color: @neon_yellow;
+}
+
+/* ===== PROGRESS BARS ===== */
+progressbar {
+    background-color: @dark_surface;
+    border-radius: 6px;
+    border: 1px solid @dark_border;
+}
+
+progressbar progress {
+    background-color: @neon_orange;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+}
+
+/* ===== CHECKBOXES AND RADIO BUTTONS ===== */
+checkbutton check {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 4px;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+checkbutton check:checked {
+    background-color: @neon_orange;
+    border-color: @neon_orange;
+    color: @dark_base;
+}
+
+checkbutton check:hover {
+    border-color: @accent_border;
+    box-shadow: 0 0 4px rgba(255, 102, 0, 0.3);
+}
+
+radiobutton radio {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 50%;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+radiobutton radio:checked {
+    background-color: @neon_orange;
+    border-color: @neon_orange;
+}
+
+radiobutton radio:hover {
+    border-color: @accent_border;
+    box-shadow: 0 0 4px rgba(255, 102, 0, 0.3);
+}
+
+/* ===== SEPARATORS ===== */
+separator {
+    background-color: @dark_border;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+/* ===== TOOLTIPS ===== */
+tooltip {
+    background-color: @dark_elevated;
+    border: 1px solid @accent_border;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: @dark_text;
+    padding: 8px 12px;
+}
+
+tooltip decoration {
+    background-color: transparent;
+}
+
+/* ===== SPECIAL CYBERPUNK EFFECTS ===== */
+/* Glow effect for focused elements */
+button:focus,
+entry:focus {
+    box-shadow: 0 0 12px rgba(255, 102, 0, 0.5);
+}
+
+/* File type specific icons glow */
+.thunar-window .view:selected {
+    box-shadow: inset 0 0 2px rgba(255, 215, 0, 0.6);
+}
+
+/* Context menu glow */
+menu {
+    box-shadow: 0 4px 16px rgba(255, 102, 0, 0.2);
+}
