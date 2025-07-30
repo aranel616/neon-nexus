@@ -10,17 +10,17 @@
  * Matches the Waybar, Mako, and terminal theming with dim neon accents
  */
 
-/* ===== COLOR DEFINITIONS ===== */
-@define-color neon_orange #ff6600;
-@define-color neon_yellow #ffd700;
-@define-color neon_green #00ff00;
-@define-color neon_pink #ff1493;
-@define-color neon_cyan #00bfff;
-@define-color neon_blue #0099ff;
+/* ===== COLOR DEFINITIONS - DIM NEON ===== */
+@define-color neon_orange #cc5200;
+@define-color neon_yellow #ccac00;
+@define-color neon_green #00cc00;
+@define-color neon_pink #cc1174;
+@define-color neon_cyan #00cccc;
+@define-color neon_blue #0099cc;
 @define-color music_green #66cc99;
 
 /* Dark foundation colors */
-@define-color dark_base #1a1a1a;
+@define-color dark_base #000000;
 @define-color dark_surface #2a2a2a;
 @define-color dark_elevated #3a3a3a;
 @define-color dark_border #404040;
@@ -28,12 +28,12 @@
 @define-color dark_text_secondary #b0b0b0;
 @define-color dark_text_disabled #707070;
 
-/* Accent colors with transparency */
-@define-color accent_bg rgba(255, 102, 0, 0.15);
-@define-color accent_border rgba(255, 102, 0, 0.5);
-@define-color hover_bg rgba(255, 102, 0, 0.25);
-@define-color selected_bg rgba(255, 215, 0, 0.2);
-@define-color selected_border rgba(255, 215, 0, 0.6);
+/* Accent colors with transparency - dim */
+@define-color accent_bg rgba(204, 82, 0, 0.15);
+@define-color accent_border rgba(204, 82, 0, 0.5);
+@define-color hover_bg rgba(204, 82, 0, 0.25);
+@define-color selected_bg rgba(204, 172, 0, 0.2);
+@define-color selected_border rgba(204, 172, 0, 0.6);
 
 /* ===== GLOBAL STYLES ===== */
 * {
@@ -55,14 +55,14 @@ window {
 }
 
 .thunar-window toolbar {
-    background-color: @dark_surface;
-    border-bottom: 1px solid @dark_border;
+    background-color: @dark_base;
+    border-bottom: 1px solid @accent_border;
     padding: 8px;
 }
 
 .thunar-window .sidebar {
-    background-color: @dark_surface;
-    border-right: 1px solid @dark_border;
+    background-color: @dark_base;
+    border-right: 1px solid @accent_border;
 }
 
 .thunar-window .view {
@@ -72,31 +72,37 @@ window {
 
 /* ===== BUTTONS ===== */
 button {
-    background-color: @dark_surface;
-    border: 1px solid @dark_border;
+    background-color: @dark_base;
+    border: 2px solid @neon_orange;
     border-radius: 6px;
-    color: @dark_text;
+    color: @neon_orange;
     padding: 8px 12px;
     transition: all 0.2s ease;
+    font-weight: bold;
+    box-shadow: 0 0 4px rgba(255, 102, 0, 0.2);
 }
 
 button:hover {
     background-color: @hover_bg;
-    border-color: @accent_border;
-    color: @neon_orange;
-    box-shadow: 0 0 8px rgba(255, 102, 0, 0.3);
+    border-color: @neon_yellow;
+    color: @neon_yellow;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
 }
 
 button:active {
-    background-color: @accent_bg;
-    border-color: @neon_orange;
+    background-color: @selected_bg;
+    border-color: @neon_yellow;
+    color: @neon_yellow;
+    box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.3);
 }
 
 button:disabled {
     background-color: @dark_base;
-    border-color: @dark_border;
+    border-color: @dark_text_disabled;
     color: @dark_text_disabled;
     opacity: 0.5;
+    box-shadow: none;
 }
 
 /* ===== ENTRY FIELDS ===== */
@@ -137,6 +143,62 @@ treeview:hover {
     background-color: rgba(255, 102, 0, 0.1);
 }
 
+/* ===== THUNAR ICON VIEW & LIST VIEW SELECTION ===== */
+/* Icon view selection */
+iconview:selected {
+    background-color: @selected_bg;
+    color: @neon_yellow;
+    border: 1px solid @selected_border;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+iconview:hover {
+    background-color: @hover_bg;
+    color: @neon_orange;
+    border-radius: 4px;
+}
+
+iconview text:selected {
+    background-color: @selected_bg;
+    color: @neon_yellow;
+}
+
+/* List view selection */
+.thunar-window treeview:selected,
+.thunar-window treeview row:selected {
+    background-color: @selected_bg;
+    color: @neon_yellow;
+    border: 1px solid @selected_border;
+    box-shadow: inset 0 0 4px rgba(255, 215, 0, 0.3);
+}
+
+.thunar-window treeview:hover,
+.thunar-window treeview row:hover {
+    background-color: @hover_bg;
+    color: @neon_orange;
+}
+
+/* Generic selection enhancement */
+*:selected {
+    background-color: @selected_bg;
+    color: @neon_yellow;
+}
+
+/* File/folder items in both views */
+.thunar-window .view cell:selected {
+    background-color: @selected_bg;
+    color: @neon_yellow;
+    border: 1px solid @selected_border;
+    border-radius: 3px;
+}
+
+.thunar-window .view cell:hover {
+    background-color: @hover_bg;
+    color: @neon_orange;
+    border-radius: 3px;
+}
+
 treeview header button {
     background-color: @dark_surface;
     border: 1px solid @dark_border;
@@ -175,8 +237,8 @@ scrollbar slider:active {
 
 /* ===== SIDEBAR ===== */
 sidebar {
-    background-color: @dark_surface;
-    border-right: 1px solid @dark_border;
+    background-color: @dark_base;
+    border-right: 1px solid @accent_border;
 }
 
 sidebar row {
@@ -199,15 +261,27 @@ sidebar row:selected {
 
 /* ===== TOOLBAR ===== */
 toolbar {
-    background-color: @dark_surface;
-    border-bottom: 1px solid @dark_border;
+    background-color: @dark_base;
+    border-bottom: 1px solid @accent_border;
     padding: 4px;
 }
 
 toolbar button {
-    border-radius: 4px;
+    background-color: @dark_base;
+    border: 2px solid @neon_orange;
+    border-radius: 6px;
+    color: @neon_orange;
     margin: 2px;
     padding: 6px 10px;
+    box-shadow: 0 0 4px rgba(255, 102, 0, 0.2);
+    font-weight: bold;
+}
+
+toolbar button:hover {
+    background-color: @hover_bg;
+    border-color: @neon_yellow;
+    color: @neon_yellow;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
 toolbar separator {
@@ -401,4 +475,98 @@ entry:focus {
 /* Context menu glow */
 menu {
     box-shadow: 0 4px 16px rgba(255, 102, 0, 0.2);
+}
+
+/* ===== NUCLEAR THUNAR OVERRIDES ===== */
+/* Force black backgrounds on EVERYTHING */
+* {
+    background-color: #000000 !important;
+    background: #000000 !important;
+}
+
+window,
+.thunar-window,
+.thunar-window *,
+.thunar-window > *,
+.thunar-window widget,
+.thunar-window scrolledwindow,
+.thunar-window paned,
+.thunar-window box,
+.thunar-window grid,
+.thunar-window viewport,
+.thunar-window frame,
+.thunar-window container,
+widget,
+scrolledwindow,
+paned,
+box,
+grid,
+viewport,
+frame,
+container,
+thunarwindow,
+thunar-window,
+.view,
+.standard-view,
+.shortcuts-pane,
+.location-bar,
+.pathbar {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    background-image: none !important;
+}
+
+/* Force Waybar-style dim neon buttons on EVERYTHING - using exact zsh colors */
+button,
+.button,
+.thunar-window button,
+.thunar-window toolbar button,
+.thunar-window headerbar button,
+button.flat,
+button.toggle,
+input[type="button"],
+input[type="submit"],
+*[role="button"] {
+    background-color: #260f00 !important;
+    background: #260f00 !important;
+    background-image: none !important;
+    border: 1px solid rgba(255, 102, 0, 0.3) !important;
+    border-radius: 6px !important;
+    color: #ff6600 !important;
+    font-weight: bold !important;
+    box-shadow: none !important;
+    padding: 6px 12px !important;
+    transition: all 0.3s ease !important;
+    text-shadow: none !important;
+}
+
+button:hover,
+.button:hover,
+.thunar-window button:hover,
+.thunar-window toolbar button:hover,
+.thunar-window headerbar button:hover,
+button.flat:hover,
+button.toggle:hover,
+*[role="button"]:hover {
+    background-color: rgba(255, 102, 0, 0.2) !important;
+    border-color: rgba(255, 102, 0, 0.6) !important;
+    color: #ff6600 !important;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.4) !important;
+    text-shadow: none !important;
+}
+
+/* Force toolbar styling */
+.thunar-window toolbar,
+.thunar-window headerbar {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    border-bottom: 1px solid rgba(255, 102, 0, 0.5) !important;
+}
+
+/* Force sidebar styling */
+.thunar-window sidebar,
+.thunar-window .sidebar {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    border-right: 1px solid rgba(255, 102, 0, 0.5) !important;
 }

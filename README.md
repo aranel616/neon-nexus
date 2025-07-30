@@ -47,9 +47,10 @@ The **Dim** variant uses carefully selected muted colors that maintain the cyber
 - **[Wofi](configs/wofi/)** - Application launcher with floating design and subtle glow
 - **[Zsh](configs/zsh/)** - Shell with custom "neon-nexus-dim" Oh My Zsh theme
 - **[Kitty](configs/kitty/)** - Terminal emulator with complete dim color palette
-- **[GTK](configs/gtk/)** - System theme for GTK applications (Thunar, file dialogs, etc.)
+- **[GTK](configs/gtk/)** - System theme for GTK applications with comprehensive Thunar file manager theming
 
 ### 🚧 Work in Progress
+- **GTK Theme Refinement** - Enhanced file manager selection highlighting and button styling (recently updated with zsh prompt color matching)
 - **[Firefox](configs/firefox/)** - Browser UI theme (partial userChrome.css implementation)
 - **[Dolphin](configs/dolphin/)** - File manager theming (Qt theming in development)
 
