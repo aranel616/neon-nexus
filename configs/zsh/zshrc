@@ -126,6 +126,10 @@ alias windows="cd /mnt/windows/Users/arane"
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
+# fzf fuzzy finder
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Less with color support
 export LESS="-R"
 

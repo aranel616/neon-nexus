@@ -1,12 +1,12 @@
 /*
- * ███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███████╗
- * ████╗  ██║██╔════╝██╔═══██╗████╗  ██║    ████╗  ██║██╔════╝╚██╗██╔╝██║   ██║██╔════╝
- * ██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║    ██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║███████╗
- * ██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║    ██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║╚════██║
- * ██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║
- * ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+ * ███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███╗   ███╗
+ * ████╗  ██║██╔════╝██╔═══██╗████╗  ██║    ████╗  ██║██╔════╝╚██╗██╔╝██║   ██║████╗ ████║
+ * ██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║    ██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║██╔████╔██║
+ * ██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║    ██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║██║╚██╔╝██║
+ * ██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝██║ ╚═╝ ██║
+ * ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
  *
- * Firefox userChrome.css - "Neon Nexus" Cyberpunk Theme
+ * Firefox userChrome.css - "Neon Nexus Dim" Cyberpunk Theme
  * Matches Waybar, Mako, Wofi, Hyprland, Zsh, and Kitty theming
  *
  * IMPORTANT: This file requires Firefox's legacy customization feature.
@@ -18,19 +18,13 @@
 
 /* Import custom properties for theme colors */
 :root {
-  /* Neon Nexus Color Palette */
+  /* Neon Nexus Dim Color Palette */
   --neon-bg-primary: #1a1a1a;
   --neon-bg-secondary: #000000;
   --neon-text-primary: #e0e0e0;
   --neon-text-secondary: #b0b0b0;
   --neon-orange-dim: #cc5200;
   --neon-yellow-dim: #ccac00;
-  --hyprland-orange: rgba(255, 102, 0, 0.25);
-  --hyprland-yellow: rgba(255, 215, 0, 0.25);
-  --hyprland-active: rgba(255, 102, 0, 0.25);
-  --hyprland-inactive: rgba(26, 26, 26, 0.38);
-  --waybar-active-bg: rgba(255, 102, 0, 0.15);
-  --waybar-active-border: rgba(255, 102, 0, 0.6);
   --neon-blue-dim: #0099cc;
   --neon-cyan-dim: #00cccc;
   --neon-green-dim: #00cc00;
@@ -44,39 +38,33 @@
 
 /* Main browser window background */
 #main-window,
-#navigator-toolbox,
-#TabsToolbar,
-#nav-bar,
-toolbar {
-  background-color: var(--neon-bg-secondary) !important;
+#navigator-toolbox {
+  background-color: var(--neon-bg-primary) !important;
   color: var(--neon-text-primary) !important;
 }
 
 /* Tab bar styling */
 .tabbrowser-tab {
-  background-color: var(--hyprland-inactive) !important;
+  background-color: var(--neon-bg-primary) !important;
   color: var(--neon-text-secondary) !important;
-  border: 1px solid var(--hyprland-inactive) !important;
+  border: 1px solid transparent !important;
   border-radius: 6px 6px 0 0 !important;
   margin: 2px 1px 0 1px !important;
   transition: all 0.2s ease !important;
 }
 
 /* Active tab */
-.tabbrowser-tab[selected="true"],
-.tabbrowser-tab[selected="true"] .tab-content,
-.tabbrowser-tab[selected="true"] .tab-background {
-  background-color: var(--waybar-active-bg) !important;
-  background: var(--waybar-active-bg) !important;
-  color: #ff6600 !important;
-  border: 1px solid var(--waybar-active-border) !important;
-  box-shadow: none !important;
+.tabbrowser-tab[selected="true"] {
+  background-color: var(--neon-orange-alpha) !important;
+  color: var(--neon-orange-dim) !important;
+  border: 1px solid var(--neon-orange-dim) !important;
+  box-shadow: 0 0 10px rgba(204, 82, 0, 0.4) !important;
 }
 
 /* Tab hover effect */
 .tabbrowser-tab:hover:not([selected="true"]) {
   background-color: rgba(204, 82, 0, 0.1) !important;
-  color: var(--hyprland-orange) !important;
+  color: var(--neon-orange-dim) !important;
   border: 1px solid rgba(204, 82, 0, 0.3) !important;
 }
 
@@ -99,14 +87,14 @@ toolbar {
 #urlbar-input-container {
   background-color: var(--neon-bg-secondary) !important;
   color: var(--neon-text-primary) !important;
-  border: 1px solid var(--hyprland-orange) !important;
+  border: 2px solid var(--neon-orange-dim) !important;
   border-radius: 8px !important;
-  box-shadow: none !important;
+  box-shadow: 0 0 8px rgba(204, 82, 0, 0.3) !important;
 }
 
 #urlbar:focus-within {
-  border-color: var(--hyprland-orange) !important;
-  box-shadow: none !important;
+  border-color: var(--neon-orange-dim) !important;
+  box-shadow: 0 0 15px rgba(204, 82, 0, 0.6) !important;
 }
 
 #urlbar-input {
@@ -136,8 +124,8 @@ toolbar {
 
 .toolbarbutton-1:hover {
   background-color: var(--neon-orange-alpha) !important;
-  border: 1px solid var(--hyprland-orange) !important;
-  color: var(--hyprland-orange) !important;
+  border: 1px solid var(--neon-orange-dim) !important;
+  color: var(--neon-orange-dim) !important;
   box-shadow: 0 0 8px rgba(204, 82, 0, 0.3) !important;
 }
 
@@ -157,16 +145,8 @@ toolbar {
 
 /* Bookmarks toolbar */
 #PersonalToolbar {
-  background-color: var(--neon-bg-secondary) !important;
-  border-bottom: none !important;
-}
-
-/* Make tab bar bottom border black */
-#TabsToolbar::after,
-.tabbrowser-arrowscrollbox::after,
-.tab-stack::after {
-  border-bottom: 1px solid var(--neon-bg-secondary) !important;
-  background-color: var(--neon-bg-secondary) !important;
+  background-color: var(--neon-bg-primary) !important;
+  border-bottom: 1px solid var(--neon-orange-dim) !important;
 }
 
 .bookmark-item {
@@ -179,9 +159,9 @@ toolbar {
 }
 
 .bookmark-item:hover {
-  background-color: var(--neon-orange-dim) !important;
+  background-color: var(--neon-green-dim) !important;
   color: #ffffff !important;
-  border: 1px solid var(--neon-orange-dim) !important;
+  border: 1px solid var(--neon-green-dim) !important;
 }
 
 /* Navigation buttons (back, forward, refresh) */
@@ -207,26 +187,10 @@ toolbar {
 /* Sidebar */
 #sidebar-box,
 #sidebar-header,
-#sidebar,
-#sidebar-splitter,
-#sidebar-box #sidebar,
-.sidebar-panel,
-#bookmarksPanel,
-#history-panel,
-#sidebar-search-container,
-#bookmarks-view-children,
-#historyTree,
-#bookmarks-view treechildren,
-#bookmarks-view,
-#bookmarksPanel treechildren,
-.sidebar-placesTreechildren,
-.sidebar-placesTreechildren::-moz-tree-cell {
-  background-color: var(--neon-bg-secondary) !important;
-  background: var(--neon-bg-secondary) !important;
+#sidebar {
+  background-color: var(--neon-bg-primary) !important;
   color: var(--neon-text-primary) !important;
-  border-right: 1px solid var(--hyprland-orange) !important;
-  -moz-appearance: none !important;
-  border-color: transparent !important;
+  border-right: 2px solid var(--neon-orange-dim) !important;
 }
 
 /* Context menus and panels */
@@ -234,7 +198,7 @@ menupopup,
 panel {
   background-color: var(--neon-bg-primary) !important;
   color: var(--neon-text-primary) !important;
-  border: 1px solid var(--hyprland-orange) !important;
+  border: 2px solid var(--neon-orange-dim) !important;
   border-radius: 8px !important;
   box-shadow: 0 0 15px rgba(26, 26, 26, 0.8) !important;
 }
@@ -242,12 +206,12 @@ panel {
 menuitem:hover,
 .panel-arrowcontent > * :hover {
   background-color: var(--neon-orange-alpha) !important;
-  color: var(--hyprland-orange) !important;
+  color: var(--neon-orange-dim) !important;
 }
 
 /* Dropdown arrows and separators */
 menuseparator {
-  border-color: var(--hyprland-orange) !important;
+  border-color: var(--neon-orange-dim) !important;
 }
 
 /* Status bar and notifications */
@@ -262,12 +226,12 @@ scrollbar {
 }
 
 scrollbar thumb {
-  background-color: var(--hyprland-orange) !important;
+  background-color: var(--neon-orange-dim) !important;
   border-radius: 6px !important;
 }
 
 scrollbar thumb:hover {
-  background-color: var(--hyprland-orange) !important;
+  background-color: var(--neon-orange-dim) !important;
   box-shadow: 0 0 5px rgba(204, 82, 0, 0.5) !important;
 }
 
@@ -294,12 +258,12 @@ scrollbar thumb:hover {
 
 /* Tab loading indicator */
 .tab-throbber {
-  color: var(--hyprland-orange) !important;
+  color: var(--neon-orange-dim) !important;
 }
 
 /* Splitter for sidebar resizing */
 splitter {
-  background-color: var(--hyprland-orange) !important;
+  background-color: var(--neon-orange-dim) !important;
   border: none !important;
   min-width: 2px !important;
 }
@@ -308,52 +272,4 @@ splitter {
 #developer-button:hover {
   background-color: var(--neon-pink-dim) !important;
   color: #ffffff !important;
-}
-
-/* New tab page theming */
-@-moz-document url(about:home), url(about:newtab) {
-  :root {
-    --newtab-background-color: var(--neon-bg-secondary) !important;
-    --newtab-text-primary-color: var(--neon-text-primary) !important;
-    --newtab-border-color: var(--hyprland-active) !important;
-    --newtab-search-background-color: var(--neon-bg-primary) !important;
-    --newtab-search-border-color: var(--hyprland-active) !important;
-  }
-  
-  body {
-    background-color: var(--neon-bg-secondary) !important;
-    color: var(--neon-text-primary) !important;
-  }
-  
-  .search-wrapper {
-    background-color: var(--neon-bg-primary) !important;
-    border: 1px solid var(--hyprland-active) !important;
-    border-radius: 8px !important;
-  }
-  
-  .search-handoff-button {
-    background-color: var(--neon-bg-primary) !important;
-    color: var(--neon-text-primary) !important;
-    border: 1px solid var(--hyprland-active) !important;
-    border-radius: 8px !important;
-  }
-  
-  .top-site-outer {
-    background-color: var(--neon-bg-primary) !important;
-    border: 1px solid var(--hyprland-inactive) !important;
-    border-radius: 6px !important;
-  }
-  
-  .top-site-outer:hover {
-    border-color: var(--hyprland-active) !important;
-    background-color: var(--hyprland-inactive) !important;
-  }
-  
-  .top-site-inner .tile {
-    background-color: var(--neon-bg-primary) !important;
-  }
-  
-  .top-site-inner .title {
-    color: var(--neon-text-primary) !important;
-  }
 }
