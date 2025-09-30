@@ -130,6 +130,9 @@ eval "$(zoxide init zsh)"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+# zsh-autosuggestions (gray autocomplete)
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Less with color support
 export LESS="-R"
 
