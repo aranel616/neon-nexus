@@ -1,0 +1,48 @@
+/*
+ * NEON NEXUS - Rofi Configuration
+ *
+ * Main configuration file for Rofi launcher
+ * References neon-nexus.rasi theme file
+ */
+
+configuration {
+    /* Application modes */
+    modes: "drun,run,window";
+
+    /* Display settings */
+    show-icons: true;
+    icon-theme: "Adwaita";
+    display-drun: "Launch";
+    display-run: "Run";
+    display-window: "Windows";
+
+    /* Behavior */
+    drun-display-format: "{name}";
+    window-format: "{w} {c} {t}";
+
+    /* Performance */
+    disable-history: false;
+    hide-scrollbar: false;
+    sidebar-mode: false;
+
+    /* Matching */
+    matching: "fuzzy";
+    case-sensitive: false;
+
+    /* Terminal for commands */
+    terminal: "kitty";
+
+    /* SSH settings */
+    ssh-client: "ssh";
+    ssh-command: "{terminal} -e {ssh-client} {host}";
+
+    /* Run command settings */
+    run-command: "{cmd}";
+    run-shell-command: "{terminal} -e {cmd}";
+
+    /* Window behavior */
+    hover-select: false;
+}
+
+/* Import Neon Nexus theme */
+@theme "neon-nexus"

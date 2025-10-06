@@ -1,0 +1,228 @@
+/*
+ * NEON NEXUS - Rofi Theme
+ *
+ * Cyberpunk Application Launcher Theme
+ * Matches Waybar, Mako, Kitty, and Hyprland theming
+ */
+
+* {
+    /* Neon Nexus Color Palette */
+    neon-orange:      #ff6600;
+    neon-yellow:      #ffd700;
+    neon-green:       #00ff00;
+    neon-pink:        #ff1493;
+    neon-cyan:        #00ffff;
+    neon-blue:        #00bfff;
+    music-green:      #66cc99;
+
+    /* Dark foundation */
+    dark-base:        #1a1a1a;
+    dark-surface:     #2a2a2a;
+    dark-elevated:    #3a3a3a;
+    dark-border:      #404040;
+    dark-text:        #e0e0e0;
+    dark-text-dim:    #b0b0b0;
+
+    /* Transparency variants */
+    orange-bg:        rgba(255, 102, 0, 0.15);
+    orange-border:    rgba(255, 102, 0, 0.6);
+    orange-hover:     rgba(255, 102, 0, 0.25);
+    yellow-select:    rgba(255, 215, 0, 0.2);
+
+    /* Global settings */
+    background-color: transparent;
+    text-color:       @dark-text;
+    font:             "Fira Code 13";
+}
+
+/* ===== MAIN WINDOW ===== */
+window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    fullscreen:       false;
+    width:            600px;
+    height:           400px;
+    x-offset:         0px;
+    y-offset:         0px;
+
+    enabled:          true;
+    margin:           0px;
+    padding:          0px;
+    border:           2px solid;
+    border-radius:    12px;
+    border-color:     @orange-border;
+    background-color: rgba(26, 26, 26, 0.95);
+    cursor:           "default";
+}
+
+/* ===== MAIN CONTAINER ===== */
+mainbox {
+    enabled:          true;
+    spacing:          0px;
+    margin:           0px;
+    padding:          8px;
+    border:           0px solid;
+    border-radius:    0px;
+    border-color:     @dark-border;
+    background-color: transparent;
+    children:         [ "inputbar", "listview" ];
+}
+
+/* ===== INPUT BAR ===== */
+inputbar {
+    enabled:          true;
+    spacing:          8px;
+    margin:           0px 0px 8px 0px;
+    padding:          12px 16px;
+    border:           2px solid;
+    border-radius:    8px;
+    border-color:     rgba(255, 102, 0, 0.4);
+    background-color: rgba(26, 26, 26, 0.8);
+    text-color:       @dark-text;
+    children:         [ "prompt", "entry" ];
+
+}
+
+prompt {
+    enabled:          true;
+    background-color: transparent;
+    text-color:       @neon-orange;
+    font:             "Fira Code Bold 14";
+}
+
+entry {
+    enabled:          true;
+    background-color: transparent;
+    text-color:       @dark-text;
+    cursor:           text;
+    placeholder:      "Search applications...";
+    placeholder-color: @dark-text-dim;
+    font:             "Fira Code 13";
+}
+
+/* ===== LIST VIEW ===== */
+listview {
+    enabled:          true;
+    columns:          1;
+    lines:            8;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        true;
+    layout:           vertical;
+    reverse:          false;
+    fixed-height:     true;
+    fixed-columns:    true;
+
+    spacing:          4px;
+    margin:           0px;
+    padding:          0px;
+    border:           0px solid;
+    border-radius:    0px;
+    border-color:     @dark-border;
+    background-color: transparent;
+    text-color:       @dark-text;
+    cursor:           "default";
+}
+
+/* ===== SCROLLBAR ===== */
+scrollbar {
+    enabled:          true;
+    width:            8px;
+    margin:           0px 0px 0px 4px;
+    padding:          0px;
+    border:           0px solid;
+    border-radius:    6px;
+    background-color: rgba(26, 26, 26, 0.3);
+    handle-width:     8px;
+    handle-color:     rgba(255, 102, 0, 0.5);
+    cursor:           "default";
+}
+
+/* ===== ELEMENTS (Application Entries) ===== */
+element {
+    enabled:          true;
+    spacing:          12px;
+    margin:           0px;
+    padding:          12px 16px;
+    border:           1px solid;
+    border-radius:    6px;
+    border-color:     rgba(255, 255, 255, 0.1);
+    background-color: rgba(26, 26, 26, 0.6);
+    text-color:       @dark-text;
+    cursor:           pointer;
+}
+
+element normal.normal {
+    background-color: rgba(26, 26, 26, 0.6);
+    text-color:       @dark-text;
+}
+
+element selected.normal {
+    background-color: @orange-hover;
+    border-color:     @orange-border;
+    text-color:       @neon-orange;
+
+}
+
+element alternate.normal {
+    background-color: rgba(26, 26, 26, 0.6);
+    text-color:       @dark-text;
+}
+
+/* ===== ELEMENT ICONS ===== */
+element-icon {
+    background-color: transparent;
+    text-color:       inherit;
+    size:             32px;
+    cursor:           inherit;
+    margin:           0px 8px 0px 0px;
+}
+
+element selected.normal element-icon {
+}
+
+/* ===== ELEMENT TEXT ===== */
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    highlight:        inherit;
+    cursor:           inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+}
+
+element selected.normal element-text {
+    text-color:       @neon-orange;
+    font:             "Fira Code SemiBold 13";
+
+}
+
+/* ===== MESSAGE (Error/Info Display) ===== */
+message {
+    enabled:          true;
+    margin:           0px 0px 8px 0px;
+    padding:          12px;
+    border:           0px solid;
+    border-radius:    8px;
+    border-color:     @dark-border;
+    background-color: @dark-surface;
+    text-color:       @dark-text;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @dark-text;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+    highlight:        none;
+}
+
+error-message {
+    padding:          12px;
+    border:           2px solid;
+    border-radius:    8px;
+    border-color:     @neon-pink;
+    background-color: rgba(255, 20, 147, 0.15);
+    text-color:       @neon-pink;
+}
