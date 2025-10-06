@@ -44,13 +44,12 @@ The **Dim** variant uses carefully selected muted colors that maintain the cyber
 - **[Hyprland](configs/hypr/)** - Window manager with cyberpunk borders and animations
 - **[Waybar](configs/waybar/)** - Status bar with floating modules and dim neon accents
 - **[Mako](configs/mako/)** - Notification daemon with urgency-based theming
-- **[Wofi](configs/wofi/)** - Application launcher with floating design and subtle glow
+- **[Rofi](configs/rofi/)** - Application launcher with floating design and orange glow effects
 - **[Zsh](configs/zsh/)** - Shell with custom "neon-nexus-dim" Oh My Zsh theme
 - **[Kitty](configs/kitty/)** - Terminal emulator with complete dim color palette
-- **[GTK](configs/gtk/)** - System theme for GTK applications with comprehensive Thunar file manager theming
+- **[GTK](configs/gtk/)** - System theme for GTK applications with dark base and orange accents
 
 ### 🚧 Work in Progress
-- **GTK Theme Refinement** - Enhanced file manager selection highlighting and button styling (recently updated with zsh prompt color matching)
 - **[Firefox](configs/firefox/)** - Browser UI theme (partial userChrome.css implementation)
 - **[Dolphin](configs/dolphin/)** - File manager theming (Qt theming in development)
 
@@ -68,7 +67,7 @@ neon-nexus/
 │   ├── hypr/         # Hyprland window manager config
 │   ├── waybar/       # Status bar configuration and CSS
 │   ├── mako/         # Notification daemon config
-│   ├── wofi/         # Application launcher config and theme
+│   ├── rofi/         # Application launcher config and theme
 │   ├── zsh/          # Zsh shell and custom theme
 │   ├── kitty/        # Terminal emulator theme
 │   ├── gtk/          # GTK system theme for file managers and dialogs
@@ -87,8 +86,9 @@ neon-nexus/
 - Hyprland window manager
 - Waybar status bar
 - Mako notification daemon
-- Wofi application launcher
+- Rofi application launcher
 - Zsh shell with Oh My Zsh
+- Fira Code font
 
 ### Installation
 ```bash
@@ -100,23 +100,22 @@ cd neon-nexus
 ```bash
 # Backup existing configs
 mkdir -p ~/.config/backup
-cp -r ~/.config/{hypr,waybar,mako} ~/.config/backup/
+cp -r ~/.config/{hypr,waybar,mako,rofi} ~/.config/backup/
 
 # Install theme configs
 cp -r configs/hypr ~/.config/
 cp -r configs/waybar ~/.config/
 cp -r configs/mako ~/.config/
-cp -r configs/wofi ~/.config/
+cp -r configs/rofi ~/.config/
 
 # Install GTK theme
 cp -r configs/gtk/themes/NeonNexus ~/.themes/
 mkdir -p ~/.config/gtk-3.0
 cp configs/gtk/config/gtk-3.0-settings.ini ~/.config/gtk-3.0/settings.ini
-cp configs/gtk/config/gtk-2.0-gtkrc ~/.gtkrc-2.0
 
 # Install zsh theme
 cp configs/zsh/zshrc ~/.zshrc
-cp configs/zsh/neon-nexus.zsh-theme ~/.oh-my-zsh/themes/
+cp configs/zsh/neon-nexus-dim.zsh-theme ~/.oh-my-zsh/themes/
 
 # Reload services
 hyprctl reload
@@ -207,10 +206,10 @@ animation = workspaces, 1, 4, cyberpunk, slide
 
 ## 📊 Project Stats
 
-- **Fully Themed Components**: 7 applications
+- **Fully Themed Components**: 7 applications (Hyprland, Waybar, Mako, Rofi, Zsh, Kitty, GTK)
 - **In Development**: 2 applications (Firefox, Dolphin)
-- **Color Variants**: Bright and Dim versions available
-- **Installation Time**: ~5 minutes with automated script
+- **Color Variants**: Dim neon palette optimized for reduced eye strain
+- **Installation Time**: ~5 minutes manual installation
 - **Compatibility**: Arch Linux, Manjaro, EndeavourOS (and other Arch-based distros)
 
 ## 🎯 Philosophy
