@@ -32,13 +32,18 @@ Text White: #e0e0e0 (primary text, dimmed)
 ```bash
 # Backup existing configs
 mkdir -p ~/.config/backup
-cp -r ~/.config/{hypr,waybar,mako} ~/.config/backup/
+cp -r ~/.config/{hypr,waybar,mako,rofi} ~/.config/backup/
 
 # Install configurations
 cp -r configs/hypr ~/.config/
 cp -r configs/waybar ~/.config/
 cp -r configs/mako ~/.config/
-cp -r configs/wofi ~/.config/
+cp -r configs/rofi ~/.config/
+
+# Install GTK theme
+cp -r configs/gtk/themes/NeonNexus ~/.themes/
+mkdir -p ~/.config/gtk-3.0
+cp configs/gtk/config/gtk-3.0-settings.ini ~/.config/gtk-3.0/settings.ini
 
 # Install zsh theme
 cp configs/zsh/zshrc ~/.zshrc
@@ -84,9 +89,10 @@ fc-list | grep "Fira Code"
 - **Features**: Urgency-based theming, app-specific colors, category theming
 - **Integration**: Matches Waybar color scheme and typography
 
-### 4. Wofi (Application Launcher)
-- **Location**: `configs/wofi/config` and `style.css`
-- **Features**: Floating window, neon search, backdrop blur, smooth animations
+### 4. Rofi (Application Launcher)
+- **Location**: `configs/rofi/config.rasi` and `neon-nexus.rasi`
+- **Features**: Floating window with orange border, neon search bar, smooth animations, scrollbar
+- **Design**: 600x400px centered window with fuzzy matching and icon support
 
 ### 5. Terminal & Shell
 - **Kitty**: Complete color scheme in `configs/kitty/kitty.conf`
@@ -100,6 +106,12 @@ fc-list | grep "Fira Code"
 ### 7. Dolphin File Manager
 - **Location**: `configs/dolphin/`
 - **Implementation**: Qt5/Qt6 theming via system configuration
+
+### 8. GTK Applications
+- **Location**: `configs/gtk/themes/NeonNexus/`
+- **Components**: Complete GTK3 theme with gtk.css and settings.ini
+- **Features**: Dark base, orange accents, themed buttons, entries, scrollbars, menus, tooltips
+- **Integration**: System-wide theming for GTK applications like file managers
 
 ## Development Workflow
 
@@ -130,9 +142,10 @@ neon-nexus/
 │   ├── hypr/         # Hyprland window manager
 │   ├── waybar/       # Status bar (config + CSS)
 │   ├── mako/         # Notifications
-│   ├── wofi/         # App launcher
+│   ├── rofi/         # App launcher (replaced wofi)
 │   ├── zsh/          # Shell theme
 │   ├── kitty/        # Terminal
+│   ├── gtk/          # GTK system theme
 │   ├── firefox/      # Browser (manual setup)
 │   └── dolphin/      # File manager (Qt theming)
 ├── docs/             # Documentation
@@ -167,7 +180,7 @@ neon-nexus/
 
 ### Recommended
 - Kitty (terminal emulator)
-- Wofi (application launcher)
+- Rofi (application launcher)
 - Zsh + Oh My Zsh (shell)
 - Fira Code font
 
@@ -175,6 +188,7 @@ neon-nexus/
 - Firefox (browser theming)
 - Dolphin (file manager theming)
 - qt5ct/qt6ct (Qt application theming)
+- GTK theme engine for system-wide theming
 
 ## No Traditional Build System
 
