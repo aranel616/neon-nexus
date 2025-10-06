@@ -13,8 +13,15 @@ Cyberpunk dark theme for GTK applications including Thunar file manager.
 
 ## Color Scheme
 
-- **Primary Orange**: `#ff6600` - Buttons, links, active elements
-- **Electric Yellow**: `#ffd700` - Selected items, highlights
+Fully matches the Neon Nexus palette from Waybar, Mako, Kitty, and Hyprland:
+
+- **Primary Orange**: `#ff6600` - Buttons, links, active elements, switches
+- **Electric Yellow**: `#ffd700` - Selected items, highlights, hover states
+- **Neon Green**: `#00ff00` - Success states, high level indicators
+- **Electric Pink**: `#ff1493` - Error states, critical alerts
+- **Cyber Blue**: `#00bfff` - Info states, information banners
+- **Cyan**: `#00ffff` - Special elements
+- **Music Green**: `#66cc99` - Media-related elements
 - **Dark Base**: `#1a1a1a` - Main background
 - **Dark Surface**: `#2a2a2a` - Panels, toolbars
 - **Dark Elevated**: `#3a3a3a` - Menus, popovers
@@ -45,16 +52,16 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 ## Compatibility
 
-### Fully Supported
-- **Thunar** - Xfce file manager
-- **GTK3 applications** - Modern GTK apps
-- **GTK2 applications** - Legacy GTK apps
+### Fully Supported Widgets
+**GTK3**: buttons, entries, menus, scrollbars, tooltips, treeviews, notebooks, progress bars, checkboxes, radio buttons, switches, sliders, spinners, comboboxes, levelbars, searchbars, infobars, actionbars, headerbars, sidebars, toolbars, popovers
+
+**GTK2**: Complete legacy support with matching colors
 
 ### Tested Applications
-- File managers (Thunar, Nautilus)
-- Text editors (Gedit, Kate with GTK interface)
-- System dialogs
-- Application choosers
+- **File managers**: Thunar, Nautilus, Dolphin (via GTK file dialogs)
+- **Text editors**: Gedit, Mousepad
+- **System dialogs**: All GTK-based dialogs
+- **Settings apps**: GTK preferences and configuration tools
 
 ## Customization
 

@@ -1,26 +1,21 @@
 /*
- * ███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███████╗
- * ████╗  ██║██╔════╝██╔═══██╗████╗  ██║    ████╗  ██║██╔════╝╚██╗██╔╝██║   ██║██╔════╝
- * ██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║    ██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║███████╗
- * ██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║    ██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║╚════██║
- * ██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║
- * ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
- * 
- * Neon Nexus GTK3 Theme - Cyberpunk Dark Theme for File Managers and GTK Applications
- * Matches the Waybar, Mako, and terminal theming with dim neon accents
+ * NEON NEXUS - GTK3 Theme
+ *
+ * Cyberpunk Dark Theme for File Managers and GTK Applications
+ * Matches the Waybar, Mako, and terminal theming with neon accents
  */
 
-/* ===== COLOR DEFINITIONS - DIM NEON ===== */
-@define-color neon_orange #cc5200;
-@define-color neon_yellow #ccac00;
-@define-color neon_green #00cc00;
-@define-color neon_pink #cc1174;
-@define-color neon_cyan #00cccc;
-@define-color neon_blue #0099cc;
+/* ===== COLOR DEFINITIONS - NEON NEXUS ===== */
+@define-color neon_orange #ff6600;
+@define-color neon_yellow #ffd700;
+@define-color neon_green #00ff00;
+@define-color neon_pink #ff1493;
+@define-color neon_cyan #00ffff;
+@define-color neon_blue #00bfff;
 @define-color music_green #66cc99;
 
 /* Dark foundation colors */
-@define-color dark_base #000000;
+@define-color dark_base #1a1a1a;
 @define-color dark_surface #2a2a2a;
 @define-color dark_elevated #3a3a3a;
 @define-color dark_border #404040;
@@ -28,12 +23,12 @@
 @define-color dark_text_secondary #b0b0b0;
 @define-color dark_text_disabled #707070;
 
-/* Accent colors with transparency - dim */
-@define-color accent_bg rgba(204, 82, 0, 0.15);
-@define-color accent_border rgba(204, 82, 0, 0.5);
-@define-color hover_bg rgba(204, 82, 0, 0.25);
-@define-color selected_bg rgba(204, 172, 0, 0.2);
-@define-color selected_border rgba(204, 172, 0, 0.6);
+/* Accent colors with transparency */
+@define-color accent_bg rgba(255, 102, 0, 0.15);
+@define-color accent_border rgba(255, 102, 0, 0.5);
+@define-color hover_bg rgba(255, 102, 0, 0.25);
+@define-color selected_bg rgba(255, 215, 0, 0.2);
+@define-color selected_border rgba(255, 215, 0, 0.6);
 
 /* ===== GLOBAL STYLES ===== */
 * {
@@ -79,7 +74,7 @@ button {
     padding: 8px 12px;
     transition: all 0.2s ease;
     font-weight: bold;
-    box-shadow: 0 0 4px rgba(255, 102, 0, 0.2);
+    box-shadow: 0 0 4px @accent_bg;
 }
 
 button:hover {
@@ -118,7 +113,7 @@ entry {
 entry:focus {
     background-color: @dark_elevated;
     border-color: @neon_orange;
-    box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 0 8px @accent_bg;
 }
 
 entry:disabled {
@@ -140,7 +135,7 @@ treeview:selected {
 }
 
 treeview:hover {
-    background-color: rgba(255, 102, 0, 0.1);
+    background-color: @accent_bg;
 }
 
 /* ===== THUNAR ICON VIEW & LIST VIEW SELECTION ===== */
@@ -228,7 +223,7 @@ scrollbar slider {
 
 scrollbar slider:hover {
     background-color: @neon_orange;
-    box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 0 8px @accent_bg;
 }
 
 scrollbar slider:active {
@@ -398,7 +393,7 @@ progressbar {
 progressbar progress {
     background-color: @neon_orange;
     border-radius: 6px;
-    box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 0 8px @accent_bg;
 }
 
 /* ===== CHECKBOXES AND RADIO BUTTONS ===== */
@@ -418,7 +413,7 @@ checkbutton check:checked {
 
 checkbutton check:hover {
     border-color: @accent_border;
-    box-shadow: 0 0 4px rgba(255, 102, 0, 0.3);
+    box-shadow: 0 0 4px @accent_bg;
 }
 
 radiobutton radio {
@@ -436,7 +431,7 @@ radiobutton radio:checked {
 
 radiobutton radio:hover {
     border-color: @accent_border;
-    box-shadow: 0 0 4px rgba(255, 102, 0, 0.3);
+    box-shadow: 0 0 4px @accent_bg;
 }
 
 /* ===== SEPARATORS ===== */
@@ -474,99 +469,263 @@ entry:focus {
 
 /* Context menu glow */
 menu {
-    box-shadow: 0 4px 16px rgba(255, 102, 0, 0.2);
+    box-shadow: 0 4px 16px @accent_bg;
 }
 
-/* ===== NUCLEAR THUNAR OVERRIDES ===== */
-/* Force black backgrounds on EVERYTHING */
-* {
-    background-color: #000000 !important;
-    background: #000000 !important;
+/* ===== HEADERBAR (Window Title Bars) ===== */
+headerbar {
+    background-color: @dark_base;
+    border-bottom: 1px solid @accent_border;
+    color: @dark_text;
+    padding: 4px 8px;
+    min-height: 42px;
 }
 
-window,
-.thunar-window,
-.thunar-window *,
-.thunar-window > *,
-.thunar-window widget,
-.thunar-window scrolledwindow,
-.thunar-window paned,
-.thunar-window box,
-.thunar-window grid,
-.thunar-window viewport,
-.thunar-window frame,
-.thunar-window container,
-widget,
-scrolledwindow,
-paned,
-box,
-grid,
-viewport,
-frame,
-container,
-thunarwindow,
-thunar-window,
-.view,
-.standard-view,
-.shortcuts-pane,
-.location-bar,
-.pathbar {
-    background-color: #000000 !important;
-    background: #000000 !important;
-    background-image: none !important;
+headerbar:backdrop {
+    background-color: @dark_base;
+    border-bottom-color: @dark_border;
 }
 
-/* Force Waybar-style dim neon buttons on EVERYTHING - using exact zsh colors */
-button,
-.button,
-.thunar-window button,
-.thunar-window toolbar button,
-.thunar-window headerbar button,
-button.flat,
-button.toggle,
-input[type="button"],
-input[type="submit"],
-*[role="button"] {
-    background-color: #260f00 !important;
-    background: #260f00 !important;
-    background-image: none !important;
-    border: 1px solid rgba(255, 102, 0, 0.3) !important;
-    border-radius: 6px !important;
-    color: #ff6600 !important;
-    font-weight: bold !important;
-    box-shadow: none !important;
-    padding: 6px 12px !important;
-    transition: all 0.3s ease !important;
-    text-shadow: none !important;
+headerbar button {
+    background-color: transparent;
+    border: 1px solid @accent_border;
+    border-radius: 6px;
+    color: @neon_orange;
+    padding: 6px 12px;
+    margin: 2px;
 }
 
-button:hover,
-.button:hover,
-.thunar-window button:hover,
-.thunar-window toolbar button:hover,
-.thunar-window headerbar button:hover,
-button.flat:hover,
-button.toggle:hover,
-*[role="button"]:hover {
-    background-color: rgba(255, 102, 0, 0.2) !important;
-    border-color: rgba(255, 102, 0, 0.6) !important;
-    color: #ff6600 !important;
-    box-shadow: 0 0 10px rgba(255, 102, 0, 0.4) !important;
-    text-shadow: none !important;
+headerbar button:hover {
+    background-color: @hover_bg;
+    border-color: @neon_orange;
+    box-shadow: 0 0 8px @accent_bg;
 }
 
-/* Force toolbar styling */
-.thunar-window toolbar,
-.thunar-window headerbar {
-    background-color: #000000 !important;
-    background: #000000 !important;
-    border-bottom: 1px solid rgba(255, 102, 0, 0.5) !important;
+headerbar button:active {
+    background-color: @selected_bg;
+    color: @neon_yellow;
 }
 
-/* Force sidebar styling */
-.thunar-window sidebar,
-.thunar-window .sidebar {
-    background-color: #000000 !important;
-    background: #000000 !important;
-    border-right: 1px solid rgba(255, 102, 0, 0.5) !important;
+headerbar .title {
+    color: @dark_text;
+    font-weight: bold;
+}
+
+headerbar .subtitle {
+    color: @dark_text_secondary;
+    font-size: smaller;
+}
+
+/* ===== SWITCH (Toggle Switches) ===== */
+switch {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 12px;
+    min-width: 48px;
+    min-height: 24px;
+    transition: all 0.2s ease;
+}
+
+switch:checked {
+    background-color: @neon_orange;
+    border-color: @neon_orange;
+    box-shadow: 0 0 8px @accent_bg;
+}
+
+switch slider {
+    background-color: @dark_text;
+    border-radius: 50%;
+    min-width: 18px;
+    min-height: 18px;
+    margin: 2px;
+    transition: all 0.2s ease;
+}
+
+switch:checked slider {
+    background-color: @dark_base;
+}
+
+switch:disabled {
+    opacity: 0.5;
+}
+
+/* ===== SCALE (Sliders) ===== */
+scale {
+    min-height: 12px;
+    min-width: 12px;
+}
+
+scale trough {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 6px;
+    min-height: 8px;
+}
+
+scale highlight {
+    background-color: @neon_orange;
+    border-radius: 6px;
+    box-shadow: 0 0 6px @accent_bg;
+}
+
+scale slider {
+    background-color: @neon_orange;
+    border: 2px solid @dark_base;
+    border-radius: 50%;
+    min-width: 18px;
+    min-height: 18px;
+    box-shadow: 0 0 8px @accent_bg;
+    transition: all 0.2s ease;
+}
+
+scale slider:hover {
+    background-color: @neon_yellow;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+scale slider:active {
+    background-color: @neon_yellow;
+}
+
+scale:disabled {
+    opacity: 0.5;
+}
+
+/* ===== SPINNER (Loading Indicators) ===== */
+spinner {
+    color: @neon_orange;
+    opacity: 0;
+    -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+}
+
+spinner:checked {
+    opacity: 1;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { -gtk-icon-transform: rotate(1turn); }
+}
+
+/* ===== COMBOBOX (Dropdown Selects) ===== */
+combobox button {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 6px;
+    color: @dark_text;
+    padding: 8px 12px;
+}
+
+combobox button:hover {
+    background-color: @hover_bg;
+    border-color: @accent_border;
+    color: @neon_orange;
+}
+
+combobox button arrow {
+    color: @neon_orange;
+    min-height: 16px;
+    min-width: 16px;
+}
+
+combobox popover {
+    background-color: @dark_elevated;
+    border: 1px solid @accent_border;
+}
+
+/* ===== LEVELBAR (Level Indicators) ===== */
+levelbar {
+    background-color: @dark_surface;
+    border: 1px solid @dark_border;
+    border-radius: 6px;
+    min-height: 8px;
+}
+
+levelbar trough {
+    background-color: @dark_surface;
+    border-radius: 6px;
+}
+
+levelbar block {
+    background-color: @neon_orange;
+    border-radius: 4px;
+    min-height: 6px;
+}
+
+levelbar block.low {
+    background-color: @neon_yellow;
+}
+
+levelbar block.high,
+levelbar block.full {
+    background-color: @neon_green;
+}
+
+levelbar block.empty {
+    background-color: transparent;
+}
+
+/* ===== SEARCHBAR ===== */
+searchbar {
+    background-color: @dark_surface;
+    border-bottom: 1px solid @accent_border;
+    padding: 8px;
+}
+
+searchbar entry {
+    background-color: @dark_base;
+    border: 1px solid @accent_border;
+    border-radius: 6px;
+    color: @dark_text;
+}
+
+searchbar entry:focus {
+    border-color: @neon_orange;
+    box-shadow: 0 0 8px @accent_bg;
+}
+
+/* ===== INFOBAR (Information Banners) ===== */
+infobar {
+    background-color: @dark_elevated;
+    border: 1px solid @accent_border;
+    border-radius: 0;
+    padding: 8px 12px;
+}
+
+infobar.info {
+    background-color: rgba(0, 191, 255, 0.15);
+    border-color: @neon_blue;
+}
+
+infobar.warning {
+    background-color: rgba(255, 215, 0, 0.15);
+    border-color: @neon_yellow;
+}
+
+infobar.error {
+    background-color: rgba(255, 20, 147, 0.15);
+    border-color: @neon_pink;
+}
+
+infobar.question {
+    background-color: rgba(255, 102, 0, 0.15);
+    border-color: @neon_orange;
+}
+
+infobar label {
+    color: @dark_text;
+}
+
+/* ===== ACTIONBAR (Bottom Action Bars) ===== */
+actionbar {
+    background-color: @dark_surface;
+    border-top: 1px solid @accent_border;
+    padding: 8px;
+}
+
+actionbar button {
+    background-color: transparent;
+    border: 1px solid @accent_border;
+    color: @neon_orange;
+    margin: 2px;
 }
