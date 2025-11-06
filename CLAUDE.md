@@ -40,11 +40,6 @@ cp -r configs/waybar ~/.config/
 cp -r configs/mako ~/.config/
 cp -r configs/rofi ~/.config/
 
-# Install GTK theme
-cp -r configs/gtk/themes/NeonNexus ~/.themes/
-mkdir -p ~/.config/gtk-3.0
-cp configs/gtk/config/gtk-3.0-settings.ini ~/.config/gtk-3.0/settings.ini
-
 # Install zsh theme
 cp configs/zsh/zshrc ~/.zshrc
 cp configs/zsh/neon-nexus-dim.zsh-theme ~/.oh-my-zsh/themes/
@@ -107,12 +102,6 @@ fc-list | grep "Fira Code"
 - **Location**: `configs/dolphin/`
 - **Implementation**: Qt5/Qt6 theming via system configuration
 
-### 8. GTK Applications
-- **Location**: `configs/gtk/themes/NeonNexus/`
-- **Components**: Complete GTK3 theme with gtk.css and settings.ini
-- **Features**: Dark base, orange accents, themed buttons, entries, scrollbars, menus, tooltips
-- **Integration**: System-wide theming for GTK applications like file managers
-
 ## Development Workflow
 
 ### Making Changes
@@ -145,7 +134,6 @@ neon-nexus/
 │   ├── rofi/         # App launcher (replaced wofi)
 │   ├── zsh/          # Shell theme
 │   ├── kitty/        # Terminal
-│   ├── gtk/          # GTK system theme
 │   ├── firefox/      # Browser (manual setup)
 │   └── dolphin/      # File manager (Qt theming)
 ├── docs/             # Documentation
@@ -188,7 +176,6 @@ neon-nexus/
 - Firefox (browser theming)
 - Dolphin (file manager theming)
 - qt5ct/qt6ct (Qt application theming)
-- GTK theme engine for system-wide theming
 
 ## No Traditional Build System
 
