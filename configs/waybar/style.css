@@ -22,7 +22,8 @@
 
 /* Main window styling - Transparent for floating effect */
 window#waybar {
-    background: transparent;
+    background: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: #ffffff;
 }
 
@@ -34,6 +35,14 @@ window#waybar.hidden {
 window#waybar.kitty,
 window#waybar.firefox {
     background: transparent;
+}
+
+/* Make all container boxes transparent */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    background-color: transparent;
 }
 
 /* Button styling */
@@ -79,7 +88,7 @@ button:hover {
 }
 
 #workspaces button.active {
-    background: rgba(255, 215, 0, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffd700;
     font-weight: bold;
     border: 1px solid rgba(255, 215, 0, 0.6);
@@ -132,7 +141,8 @@ button:hover {
 #power-profiles-daemon,
 #mpd,
 #custom-media,
-#custom-power {
+#custom-power,
+#custom-date {
     padding: 6px 12px;
     margin: 0 3px;
     color: #ffffff;
@@ -144,7 +154,7 @@ button:hover {
 
 /* Clock - Neon Yellow */
 #clock {
-    background: rgba(255, 215, 0, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffd700;
     font-weight: bold;
     font-size: 15px;
@@ -158,20 +168,20 @@ button:hover {
 
 /* Battery */
 #battery {
-    background: rgba(0, 255, 0, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     border: 1px solid rgba(0, 255, 0, 0.5);
     color: #00ff00;
 }
 
 #battery.charging, #battery.plugged {
-    background: rgba(255, 215, 0, 0.25);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffd700;
     border: 1px solid rgba(255, 215, 0, 0.6);
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
 }
 
 #battery.warning {
-    background: rgba(255, 165, 0, 0.25);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffa500;
     border: 1px solid rgba(255, 165, 0, 0.6);
 }
@@ -185,7 +195,7 @@ button:hover {
 
 /* CPU - Neon Orange */
 #cpu {
-    background: rgba(255, 102, 0, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #ff6600;
     border: 1px solid rgba(255, 102, 0, 0.5);
 }
@@ -196,14 +206,14 @@ button:hover {
 
 /* Memory - Electric Pink */
 #memory {
-    background: rgba(255, 20, 147, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #ff1493;
     border: 1px solid rgba(255, 20, 147, 0.5);
 }
 
 /* Temperature */
 #temperature {
-    background: rgba(255, 165, 0, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffa500;
     border: 1px solid rgba(255, 165, 0, 0.5);
 }
@@ -215,9 +225,21 @@ button:hover {
     box-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
 }
 
+/* Date - Orange glow like temperature */
+#custom-date {
+    background: rgba(26, 26, 26, 0.75);
+    color: #ffa500;
+    border: 1px solid rgba(255, 165, 0, 0.5);
+    font-weight: 500;
+}
+
+#custom-date:hover {
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+}
+
 /* Network */
 #network {
-    background: rgba(0, 191, 255, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #00bfff;
     border: 1px solid rgba(0, 191, 255, 0.5);
 }
@@ -231,13 +253,13 @@ button:hover {
 
 /* Audio */
 #pulseaudio {
-    background: rgba(255, 215, 0, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffd700;
     border: 1px solid rgba(255, 215, 0, 0.5);
 }
 
 #pulseaudio.muted {
-    background: rgba(128, 128, 128, 0.25);
+    background: rgba(26, 26, 26, 0.75);
     color: #808080;
     border: 1px solid rgba(128, 128, 128, 0.5);
 }
@@ -248,25 +270,25 @@ button:hover {
 
 /* Bluetooth - Cyber Blue */
 #bluetooth {
-    background: rgba(0, 191, 255, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #00bfff;
     border: 1px solid rgba(0, 191, 255, 0.5);
 }
 
 #bluetooth.disabled {
-    background: rgba(128, 128, 128, 0.25);
+    background: rgba(26, 26, 26, 0.75);
     color: #808080;
     border: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 #bluetooth.off {
-    background: rgba(255, 20, 147, 0.2);
+    background: rgba(26, 26, 26, 0.75);
     color: #ff1493;
     border: 1px solid rgba(255, 20, 147, 0.5);
 }
 
 #bluetooth.connected {
-    background: rgba(0, 191, 255, 0.25);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffffff;
     border: 1px solid rgba(0, 191, 255, 0.8);
     box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
@@ -278,19 +300,19 @@ button:hover {
 
 /* Power profiles */
 #power-profiles-daemon.performance {
-    background: rgba(255, 20, 147, 0.3);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffffff;
     border: 1px solid #ff1493;
 }
 
 #power-profiles-daemon.balanced {
-    background: rgba(255, 165, 0, 0.25);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffa500;
     border: 1px solid rgba(255, 165, 0, 0.6);
 }
 
 #power-profiles-daemon.power-saver {
-    background: rgba(0, 255, 0, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #00ff00;
     border: 1px solid rgba(0, 255, 0, 0.5);
 }
@@ -315,49 +337,49 @@ button:hover {
 
 /* Media player */
 #custom-media {
-    background: rgba(102, 204, 153, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #66cc99;
     border: 1px solid rgba(102, 204, 153, 0.5);
 }
 
 #custom-media.custom-spotify {
     color: #1db954;
-    background: rgba(29, 185, 84, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     border: 1px solid rgba(29, 185, 84, 0.5);
 }
 
 /* MPD */
 #mpd {
-    background: rgba(102, 204, 153, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #66cc99;
     border: 1px solid rgba(102, 204, 153, 0.5);
 }
 
 #mpd.disconnected {
-    background: rgba(255, 20, 147, 0.2);
+    background: rgba(26, 26, 26, 0.75);
     color: #ff1493;
     border: 1px solid rgba(255, 20, 147, 0.5);
 }
 
 #mpd.stopped {
-    background: rgba(128, 128, 128, 0.2);
+    background: rgba(26, 26, 26, 0.75);
     color: #808080;
 }
 
 #mpd.paused {
-    background: rgba(255, 165, 0, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffa500;
     border: 1px solid rgba(255, 165, 0, 0.5);
 }
 
 /* Idle inhibitor */
 #idle_inhibitor {
-    background: rgba(45, 52, 54, 0.3);
+    background: rgba(26, 26, 26, 0.75);
     color: #636e72;
 }
 
 #idle_inhibitor.activated {
-    background: rgba(255, 215, 0, 0.25);
+    background: rgba(26, 26, 26, 0.75);
     color: #ffd700;
     border: 1px solid rgba(255, 215, 0, 0.6);
 }
@@ -386,7 +408,7 @@ button:hover {
 
 /* Backlight */
 #backlight {
-    background: rgba(144, 177, 177, 0.15);
+    background: rgba(26, 26, 26, 0.75);
     color: #90b1b1;
     border: 1px solid rgba(144, 177, 177, 0.5);
 }
@@ -429,7 +451,8 @@ button:hover {
 #network:hover,
 #pulseaudio:hover,
 #custom-media:hover,
-#mpd:hover {
+#mpd:hover,
+#custom-date:hover {
     opacity: 0.9;
 }
 

@@ -29,6 +29,7 @@
         "battery",
         "battery#bat2",
         "clock",
+        "custom/date",
         "tray",
         "custom/power"
     ],
@@ -101,6 +102,12 @@
         "format": "{:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
+    },
+    "custom/date": {
+        "exec": "date '+%A, %B %d, %Y'",
+        "interval": 60,
+        "format": "{}",
+        "tooltip": false
     },
     "cpu": {
         "format": "{usage}% 🖥️",
